@@ -26,7 +26,8 @@
 
                             <?php
                             // Lấy đường dẫn ảnh đầu tiên đính kèm của bài viết
-                            $first_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                            $first_image_url = get_the_post_thumbnail();
+                            var_dump($first_image_url);
                             ?>
                             <img class="avt" src="<?php echo esc_url($first_image_url); ?>" alt="<?php the_title(); ?>" />
 
@@ -40,7 +41,7 @@
                                     <?php the_excerpt(); ?>
                                 </div>
                                 <div class="continue">
-                                    <a href="#"> Xem thêm </a>
+                                <a href="<?php the_permalink(); ?>">Xem thêm </a>
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </div>
                             </div>

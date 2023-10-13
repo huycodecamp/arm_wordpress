@@ -1,3 +1,6 @@
+<?php
+/* Template Name: single */
+?>
 <?php get_header() ?>
 
 <section id="main"> 
