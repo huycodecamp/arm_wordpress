@@ -11,7 +11,7 @@
                 <div class="col-xl-7">
 
 
-                    <div class="entry-content image-only-post">
+                    <div class="entry-content" style="max-width: 100%;" >
                         <!-- Nội dung bài viết -->
                         <?php
                         if (have_posts()) :
@@ -84,4 +84,5 @@
         </div>
     </div>
 </section>
+
 <?php get_footer() ?>
