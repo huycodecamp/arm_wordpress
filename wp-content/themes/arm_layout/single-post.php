@@ -11,7 +11,7 @@
                 <div class="col-xl-7">
 
 
-                    <div class="entry-content" style="max-width: 100%;" >
+                    <div class="entry-content">
                         <!-- Nội dung bài viết -->
                         <?php
                         if (have_posts()) :

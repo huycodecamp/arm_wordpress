@@ -568,3 +568,8 @@ max-height: 200px;
     font-size: 19px;
     color: #a28bb9;
 }
+
+.entry-content img {
+    width: 100%;
+    max-width: 100%;
+}

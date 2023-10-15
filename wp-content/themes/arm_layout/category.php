@@ -1,5 +1,5 @@
 <?php
-/* Template Name: categori-page */
+/* Template Name: category */
 ?>
 
 <?php get_header() ?>
