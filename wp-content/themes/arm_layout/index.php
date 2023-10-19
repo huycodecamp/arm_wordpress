@@ -1,3 +1,6 @@
+<?php
+/* Template Name: index */
+?>
 <?php get_header() ?>
 
 <div class="block2 first">
