@@ -64,6 +64,10 @@
     </div>
 </div>
 
+
+
+
+
 <div class="block3">
     <div class="block2 khac-mau">
         <div class="header-block2">
@@ -74,6 +78,7 @@
         </div>
         <div class="wrapper-card">
             <div class="row mx-0">
+                
                 <div class="item-card col-lg-4 col-md-12 px-3">
                     <div class="bg-white">
                         <img class="avt" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/avt-1.png" />
@@ -96,50 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item-card col-lg-4 col-md-12 px-3">
-                    <div class="bg-white">
-                        <img class="avt" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/avt-1.png" />
-                        <div class="content px-3">
-                            <div class="new">Tin tức</div>
-                            <div class="description">
-                                Tiếp sức mùa thi Tuyển sinh lớp 6: Chiến dịch Hoa Phượng Đỏ
-                                2023
-                            </div>
-                            <div class="date">26/06/2023</div>
-                            <div class="description-two">
-                                Dưới những cơn mưa hè của tháng 6, không khí kỳ thi Tuyển
-                                sinh vào lớp 6 trường THPT chuyên Hà Nội - Amsterdam lại trở
-                                nên nóng hơn bao giờ hết. Ngày 23/6, hai điểm thi đã ...
-                            </div>
-                            <div class="continue">
-                                <a href="#"> Xem thêm </a>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item-card col-lg-4 col-md-12 px-3">
-                    <div class="bg-white">
-                        <img class="avt" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/avt-1.png" />
-                        <div class="content px-3">
-                            <div class="new">Tin tức</div>
-                            <div class="description">
-                                Tiếp sức mùa thi Tuyển sinh lớp 6: Chiến dịch Hoa Phượng Đỏ
-                                2023
-                            </div>
-                            <div class="date">26/06/2023</div>
-                            <div class="description-two">
-                                Dưới những cơn mưa hè của tháng 6, không khí kỳ thi Tuyển
-                                sinh vào lớp 6 trường THPT chuyên Hà Nội - Amsterdam lại trở
-                                nên nóng hơn bao giờ hết. Ngày 23/6, hai điểm thi đã ...
-                            </div>
-                            <div class="continue">
-                                <a href="#"> Xem thêm </a>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="space_white"></div>
         </div>
@@ -321,6 +283,7 @@
         </div>
         <div class="slide-slick">
             <!-- slide 1 -->
+            
             <div class="thong-tin" style="display: flex">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/hs.png" />
                 <div>
@@ -341,48 +304,7 @@
                     </div>
                 </div>
             </div>
-            <!-- slide 2 -->
-            <div class="thong-tin" style="display: flex">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/hs.png" />
-                <div>
-                    <div class="quang-ba">
-                        10X là đại sứ học thuật trường Ams trúng tuyển đại học top 1
-                        Canada
-                    </div>
-                    <div class="date-time">26/06/2023</div>
-                    <div class="description-student">
-                        Trúng tuyển 12 trường ở Mỹ, Nguyễn Thảo Anh chọn trường duy nhất
-                        không cấp học bổng nhưng giúp em thỏa đam mê nghệ thuật. Thảo
-                        Anh, cựu học sinh lớp 12 Anh 1, trường THPT chuyên Hà Nội -
-                        Amsterdam, hoàn thành nộp hồ sơ ứng t uyển đại học vào đầu tháng
-                        5. Nữ sinh trúng tuyển 17 trường, cả ở Anh, Mỹ và Nhật Bản.
-                    </div>
-                    <div class="continue-student">
-                        <a href="javascript:void(0)" class="xem-them">XEM THÊM <i class="fa-solid fa-arrow-right next"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- slide 3 -->
-            <div class="thong-tin" style="display: flex">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/hs.png" />
-                <div>
-                    <div class="quang-ba">
-                        10X là đại sứ học thuật trường Ams trúng tuyển đại học top 1
-                        Canada
-                    </div>
-                    <div class="date-time">26/06/2023</div>
-                    <div class="description-student">
-                        Trúng tuyển 12 trường ở Mỹ, Nguyễn Thảo Anh chọn trường duy nhất
-                        không cấp học bổng nhưng giúp em thỏa đam mê nghệ thuật. Thảo
-                        Anh, cựu học sinh lớp 12 Anh 1, trường THPT chuyên Hà Nội -
-                        Amsterdam, hoàn thành nộp hồ sơ ứng t uyển đại học vào đầu tháng
-                        5. Nữ sinh trúng tuyển 17 trường, cả ở Anh, Mỹ và Nhật Bản.
-                    </div>
-                    <div class="continue-student">
-                        <a href="javascript:void(0)" class="xem-them">XEM THÊM <i class="fa-solid fa-arrow-right next"></i></a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
