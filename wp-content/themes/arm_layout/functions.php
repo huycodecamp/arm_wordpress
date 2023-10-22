@@ -142,6 +142,7 @@ function custom_category_posts_shortcode_2($atts)
     if (!empty($category_posts)) {
         foreach ($category_posts as $post) {
             setup_postdata($post);
+            $feature_image = get_featured_image_guid($post->ID);
 
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
 
@@ -153,6 +154,7 @@ function custom_category_posts_shortcode_2($atts)
                             <div class="new">' . $atts['category'] . '</div>
                             <div class="description">
                             ' . $post->post_title . '
+
                             </div>
                             <div class="date">' . $post_date . '</div>
                             <div class="description-two">
@@ -188,9 +190,6 @@ function custom_category_posts_shortcode_2($atts)
     return $output;
 }
 add_shortcode('category_posts_v2', 'custom_category_posts_shortcode_2');
-
-
-
 
 
 function custom_category_posts_shortcode_3($atts)
@@ -265,3 +264,32 @@ function custom_category_posts_shortcode_3($atts)
 }
 add_shortcode('category_posts_v3', 'custom_category_posts_shortcode_3');
 
+add_theme_support('post-thumbnails');
+function get_featured_image_guid($post_id) {
+    global $wpdb;
+    
+    // Tên bảng trong cơ sở dữ liệu WordPress
+    $postmeta_table = $wpdb->prefix . 'postmeta';
+    $posts_table = $wpdb->prefix . 'posts';
+    
+    // Truy vấn SQL để lấy GUID của hình ảnh đặc trưng
+    $query = $wpdb->prepare("
+        SELECT p2.guid
+        FROM $postmeta_table AS pm
+        INNER JOIN $posts_table AS p1 ON pm.post_id = p1.ID
+        LEFT JOIN $posts_table AS p2 ON pm.meta_value = p2.ID
+        WHERE p1.ID = %d
+        AND pm.meta_key = '_thumbnail_id'
+    ", $post_id);
+    
+    $featured_image_guid = $wpdb->get_var($query);
+    
+    return $featured_image_guid;
+}
+// function custom_category_template($template) {
+//     if (is_category()) {
+//         $template = get_template_directory() . '/custom-category-template.php';
+//     }
+//     return $template;
+// }
+// add_filter('template_include', 'custom_category_template');
