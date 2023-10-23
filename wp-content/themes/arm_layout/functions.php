@@ -51,6 +51,8 @@ function custom_category_posts_shortcode_1($atts)
     ));
 
     // Tạo biến để lưu nội dung của shortcode
+    $category = get_term_by('slug', $atts['category'], 'category');
+    $category_string =  get_site_url().'?cat=' . $category->term_id;
 
     $output = '
     <div class="block2 first"> 
@@ -58,7 +60,10 @@ function custom_category_posts_shortcode_1($atts)
         <div class="title">
             <div>' . $atts['category'] . '</div>
         </div>
-    <button class="btn">Xem tất cả</button>
+        <a href="'.$category_string.'">
+            <button class="btn">Xem tất cả</button>
+        </a>
+    
     </div>
     <div class="wrapper-card">
         <div class="row mx-0">
@@ -68,13 +73,15 @@ function custom_category_posts_shortcode_1($atts)
         foreach ($category_posts as $post) {
             setup_postdata($post);
 
+            $feature_image = get_featured_image_guid($post->ID);
+
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
 
             $output .= '
                 
                             <div class="item-card col-lg-4 col-md-12 px-3">
                                 <div class="bg-white">
-                                    <img class="avt" src="" alt="" />
+                                    <img class="avt" src="'.$feature_image.'" alt="" />
                                     <div class="content px-3">
                                         <div class="new">' . $atts['category'] . '</div>
                                         <div class="description subtitle">' . $post->post_title . '</div>
@@ -118,6 +125,7 @@ function custom_category_posts_shortcode_2($atts)
         'posts_per_page' => 3, // Số lượng bài viết muốn hiển thị (-1 để hiển thị tất cả)
         'css_class' => 'block2 first'
     ), $atts);
+    
 
     // Lấy danh sách các bài viết trong danh mục
     $category_posts = get_posts(array(
@@ -125,7 +133,8 @@ function custom_category_posts_shortcode_2($atts)
         'posts_per_page' => $atts['posts_per_page'],
         'css_class' => $atts['css_class'],
     ));
-
+    $category = get_term_by('slug', $atts['category'], 'category');
+    $category_string =  get_site_url().'?cat=' . $category->term_id;
     // Tạo biến để lưu nội dung của shortcode
     $output = '
     <div class="block3">
@@ -134,7 +143,10 @@ function custom_category_posts_shortcode_2($atts)
             <div class="title">
                 <div>' . $atts['category'] . '</div>
             </div>
-            <button class="btn">Xem tất cả</button>
+            <a href="'.$category_string.'">
+                <button class="btn">Xem tất cả</button>
+            </a>
+            
         </div>
         <div class="wrapper-card">
             <div class="row mx-0">
@@ -149,7 +161,7 @@ function custom_category_posts_shortcode_2($atts)
             $output .= '
             <div class="item-card col-lg-4 col-md-12 px-3">
                     <div class="bg-white">
-                        <img class="avt" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/avt-1.png" />
+                        <img class="avt" src="'.$feature_image.'" />
                         <div class="content px-3">
                             <div class="new">' . $atts['category'] . '</div>
                             <div class="description">
@@ -207,37 +219,37 @@ function custom_category_posts_shortcode_3($atts)
         'posts_per_page' => $atts['posts_per_page'],
         'css_class' => $atts['css_class'],
     ));
-
+    $category = get_term_by('slug', $atts['category'], 'category');
+    $category_string =  get_site_url().'?cat=' . $category->term_id;
     // Tạo biến để lưu nội dung của shortcode
     $output = '
     <div class="container-student">
     <div class="student">
         <div class="header-container">
             <div class="title-student">' . $atts['category'] . '</div>
-            <button class="btn hs">Xem tất cả</button>
+            <a href="'.$category_string.'">
+                <button class="btn hs">Xem tất cả</button>
+            </a>
+            
         </div>
         <div class="slide-slick">
     ';
     if (!empty($category_posts)) {
         foreach ($category_posts as $post) {
             setup_postdata($post);
-
+            $feature_image = get_featured_image_guid($post->ID);
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
 
             $output .= '
             <div class="thong-tin" style="display: flex">
-                <img src="" />
+                <img class="avt" src="'.$feature_image.'" />
                 <div>
                     <div class="quang-ba">
                     ' . $post->post_title . '
                     </div>
                     <div class="date-time">' . $post_date . '</div>
                     <div class="description-student">
-                        Trúng tuyển 12 trường ở Mỹ, Nguyễn Thảo Anh chọn trường duy nhất
-                        không cấp học bổng nhưng giúp em thỏa đam mê nghệ thuật. Thảo
-                        Anh, cựu học sinh lớp 12 Anh 1, trường THPT chuyên Hà Nội -
-                        Amsterdam, hoàn thành nộp hồ sơ ứng t uyển đại học vào đầu tháng
-                        5. Nữ sinh trúng tuyển 17 trường, cả ở Anh, Mỹ và Nhật Bản.
+                        
                     </div>
                     <div class="continue-student">
                         <a href="' . get_permalink($post->ID) . '" class="xem-them">XEM THÊM <i class="fa-solid fa-arrow-right next"></i></a>
