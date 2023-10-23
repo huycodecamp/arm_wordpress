@@ -3,6 +3,7 @@
 ?>
 <?php get_header() ?>
 
+
 <div class="block2 first">
     <div class="header-block2">
         <div class="title">
@@ -282,6 +283,7 @@
             <button class="btn hs">Xem tất cả</button>
         </div>
         <div class="slide-slick">
+            
             <!-- slide 1 -->
             
             <div class="thong-tin" style="display: flex">
