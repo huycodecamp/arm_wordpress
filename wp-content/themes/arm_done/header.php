@@ -943,7 +943,7 @@
 			<div class="main-nav">
 				<div class="container">
 					<div class="main-nav-content">
-						<h1 class="logo"><a href="index.html"><img width="228" height="182" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20228%20182'%3E%3C/svg%3E" alt="Vinschool" data-lazy-src="https://vinschool.edu.vn/wp-content/themes/vsc/assets/img/logo.png"><noscript><img width="228" height="182" src="https://vinschool.edu.vn/wp-content/themes/vsc/assets/img/logo.png" alt="Vinschool"></noscript></a></h1>
+						<h1 class="logo"><a href="index.html"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></h1>
 						<nav class="menu-top-secondary-menu-vn-container">
 							<ul id="menu-top-secondary-menu-vn" class="main-menu">
 								<li id="2482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
@@ -1297,3 +1297,5 @@
 			</div>
 		</a>
 	</div>
+
+	
