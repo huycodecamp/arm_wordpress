@@ -36,6 +36,12 @@ a {
     content: none;
   }
 
+.news-detail img{
+    width: 100%;
+    max-width: 100%;
+}
+
+
 /* Main */
 #main {
     margin-top: var(--header-height);
