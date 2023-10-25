@@ -6,42 +6,6 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-	<!-- Google Tag Manager -->
-	<script>
-		(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-				'gtm.start': new Date().getTime(),
-				event: 'gtm.js'
-			});
-			var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s),
-				dl = l != 'dataLayer' ? '&l=' + l : '';
-			j.async = true;
-			j.src =
-				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-N8HFF3G');
-	</script>
-	<!-- End Google Tag Manager   -->
-	<!-- Google Tag Manager SEODO -->
-	<script>
-		(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-				'gtm.start': new Date().getTime(),
-				event: 'gtm.js'
-			});
-			var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s),
-				dl = l != 'dataLayer' ? '&l=' + l : '';
-			j.async = true;
-			j.src =
-				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-5755JFX');
-	</script>
-	<!-- End Google Tag Manager SEODO  -->
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -53,67 +17,8 @@
 
 	<!-- This site is optimized with the Yoast SEO Premium plugin v15.0 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>Trang chủ - Vinschool</title>
-	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<link rel="canonical" href="index.html" />
-	<meta property="og:locale" content="vi_VN" />
-	<meta property="og:locale:alternate" content="en_GB" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Trang chủ - Vinschool" />
-	<meta property="og:url" content="https://vinschool.edu.vn/" />
-	<meta property="og:site_name" content="Vinschool" />
-	<meta property="article:modified_time" content="2023-10-23T12:36:37+00:00" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<script type="application/ld+json" class="yoast-schema-graph">
-		{
-			"@context": "https://schema.org",
-			"@graph": [{
-				"@type": "WebSite",
-				"@id": "https://vinschool.edu.vn/#website",
-				"url": "https://vinschool.edu.vn/",
-				"name": "Vinschool",
-				"description": "Trang th\u00f4ng tin \u0111i\u1ec7n t\u1eed c\u1ee7a Vinschool",
-				"potentialAction": [{
-					"@type": "SearchAction",
-					"target": "https://vinschool.edu.vn/?s={search_term_string}",
-					"query-input": "required name=search_term_string"
-				}],
-				"inLanguage": "vi"
-			}, {
-				"@type": "WebPage",
-				"@id": "https://vinschool.edu.vn/#webpage",
-				"url": "https://vinschool.edu.vn/",
-				"name": "Trang ch\u1ee7 - Vinschool",
-				"isPartOf": {
-					"@id": "https://vinschool.edu.vn/#website"
-				},
-				"datePublished": "2022-07-21T10:00:41+00:00",
-				"dateModified": "2023-10-23T12:36:37+00:00",
-				"inLanguage": "vi",
-				"potentialAction": [{
-					"@type": "ReadAction",
-					"target": ["https://vinschool.edu.vn/"]
-				}]
-			}]
-		}
-	</script>
-	<!-- / Yoast SEO Premium plugin. -->
-
-
-	<link rel="alternate" type="application/rss+xml" title="Dòng thông tin Vinschool &raquo;" href="https://vinschool.edu.vn/feed/" />
-	<link rel="alternate" type="application/rss+xml" title="Dòng phản hồi Vinschool &raquo;" href="https://vinschool.edu.vn/comments/feed/" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/homepage.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/custom-style.css" />
-
-
-	<meta property="og:locale" content="vi" />
-	<meta property="og:locale:alternate" content="vi">
-	<meta property="fb:admins" content="YOUR USER ID" />
-	<meta property="og:title" content="Trang chủ" />
-	<meta property="og:description" content="" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://vinschool.edu.vn/" />
-	<meta property="og:site_name" content="Vinschool" />
-	<meta property="og:image" content="http://example.com/image.jpg" />
 	<style type="text/css">
 		img.wp-smiley,
 		img.emoji {
@@ -482,104 +387,11 @@
 	<link rel='shortlink' href='index.html' />
 	<link rel="alternate" type="application/json+oembed" href="https://vinschool.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvinschool.edu.vn%2F" />
 	<link rel="alternate" type="text/xml+oembed" href="https://vinschool.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvinschool.edu.vn%2F&amp;format=xml" />
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-222313874-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-222313874-1');
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZHMW8Y37Q"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-7ZHMW8Y37Q');
-	</script>
-
-	<!-- Google Tag Manager -->
-	<script>
-		(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-				'gtm.start': new Date().getTime(),
-				event: 'gtm.js'
-			});
-			var f = d.getElementsByTagName(s)[0],
-				j = d.createElement(s),
-				dl = l != 'dataLayer' ? '&l=' + l : '';
-			j.async = true;
-			j.src =
-				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-KZBVFQR');
-	</script>
-	<!-- End Google Tag Manager --><!-- organization Schema optimized by Schema Pro -->
-	<script type="application/ld+json">
-		{
-			"@context": "https:\/\/schema.org",
-			"@type": "EducationalOrganization",
-			"name": "H\u1ec7 th\u1ed1ng gi\u00e1o d\u1ee5c Vinschool",
-			"url": "https:\/\/vinschool.edu.vn",
-			"logo": {
-				"@type": "ImageObject",
-				"url": "https:\/\/vinschool.edu.vn\/wp-content\/uploads\/2022\/03\/22\/logovins.png",
-				"width": 2068,
-				"height": 1201
-			}
-		}
-	</script>
-	<!-- / organization Schema optimized by Schema Pro -->
-	<link rel="alternate" href="index.html" hreflang="vi" />
-	<link rel="alternate" href="https://vinschool.edu.vn/en/home-page/" hreflang="en" />
 
 	<link rel="preload" as="font" href="https://vinschool.edu.vn/wp-content/themes/vsc/assets/fonts/oxyvietnam/oxyvietnam.ttf" crossorigin>
 	<link rel="preload" as="font" href="https://vinschool.edu.vn/wp-content/themes/vsc/assets/fonts/vin_school.ttf?ky3zio" crossorigin>
-	<!-- Facebook Pixel Code -->
-	<script type='text/javascript'>
-		! function(f, b, e, v, n, t, s) {
-			if (f.fbq) return;
-			n = f.fbq = function() {
-				n.callMethod ?
-					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-			};
-			if (!f._fbq) f._fbq = n;
-			n.push = n;
-			n.loaded = !0;
-			n.version = '2.0';
-			n.queue = [];
-			t = b.createElement(e);
-			t.async = !0;
-			t.src = v;
-			s = b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t, s)
-		}(window,
-			document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-	</script>
-	<!-- End Facebook Pixel Code -->
-	<script type='text/javascript'>
-		fbq('init', '1482220455288962', [], {
-			"agent": "wordpress-6.1.3-1.8.0"
-		});
-	</script>
-	<script type='text/javascript'>
-		fbq('track', 'PageView', []);
-	</script>
-	<!-- Facebook Pixel Code -->
-	<noscript>
-		<img height="1" width="1" style="display:none" alt="fbpx" src="https://www.facebook.com/tr?id=1482220455288962&amp;ev=PageView&amp;noscript=1" />
-	</noscript>
-	<!-- End Facebook Pixel Code -->
+
 	<style type="text/css">
 		.recentcomments a {
 			display: inline !important;
@@ -756,88 +568,35 @@
 			}
 		</style>
 	</noscript>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158150881-3"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-158150881-3');
-	</script>
-
-	<!-- Schema Ozganization -->
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Organization",
-			"name": "Vinschool",
-			"url": "https://vinschool.edu.vn/",
-			"logo": "https://vinschool.edu.vn/wp-content/themes/vsc/assets/img/logo.png",
-			"contactPoint": {
-				"@type": "ContactPoint",
-				"telephone": "094 659 1010",
-				"email": " info@vinschool.edu.vn",
-				"contactType": "customer service",
-				"areaServed": "VN",
-				"availableLanguage": ["en", "Vietnamese"]
-			},
-			"sameAs": [
-				"https://www.facebook.com/vinschool.vn/",
-				"https://www.youtube.com/channel/UCmRcPP6WcUJhGu_DvwceUrA/about?disable_polymer=1"
-			]
-		}
-	</script>
 </head>
 
 <body style="background-color: white">
 	class="home page-template page-template-page-home page-template-page-home-php page page-id-45866 wp-custom-logo wp-schema-pro-1.3.0 home-page bg-dark-blue register_online_summer_camp vi-lang">
-	<!-- Google Tag Manager (noscript) SEODO-->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5755JFX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) SEODO -->
 
-	<!-- Google Tag Manager (noscript)  -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=UA-158150881-3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript)  -->
-
-	<div id='fb-root'></div>
-	<script>
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			js = d.createElement(s);
-			js.id = id;
-			js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-	<div class='fb-customerchat' attribution="wordpress" page_id='143932102452817' logged_in_greeting='Cảm ơn bạn đã quan tâm đến Vinschool, chúng tôi có thể giúp gì cho bạn?' logged_out_greeting='Cảm ơn bạn đã quan tâm đến Vinschool, chúng tôi có thể giúp gì cho bạn?' greeting_dialog_display="hide">
-	</div>
 	<header id="header">
 		<div class="conveyor_ticker text-white" style="background-color:#003e69">
 			<div class="container header_bg">
 				<div class="js-conveyor-1">
 					<ul>
 						<li>
-							<a href="https://vinschool.edu.vn/news_event/116-vinsers-gianh-diem-tuyet-doi-a-a-o-tat-ca-cac-mon-thi-igcse-va-as-a-level/">Chúc
+							<a href="javascript:void(0)">Chúc
 								mừng Vinsers giành 916 điểm tuyệt đối A*/A trong kì thi IGCSE và AS/A-Level</a>
 						</li>
 						<li>
-							<a href="https://vinschool.edu.vn/group_club/ngoai-khoa-mam-non/">Giúp trẻ nuôi dưỡng tài
+							<a href="javascript:void(0)">Giúp trẻ nuôi dưỡng tài
 								năng và Phát triển toàn diện với Câu lạc bộ Ngoại khóa Mầm non Vinschool</a>
 						</li>
 						<li>
-							<a href="https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-ngoai-khoa/tieu-hoc/">Khám
+							<a href="javascript:void(0)">Khám
 								phá những CLB Ngoại khóa được Vinsers Tiểu học yêu thích nhất</a>
 						</li>
 						<li>
-							<a href="https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-ngoai-khoa/clb-ngoai-khoa-trung-hoc/">Những
+							<a href="javascript:void(0)">Những
 								lý do khiến Vinsers không nên bỏ lỡ CLB ngoại khóa Trung học 2023 - 2024</a>
 						</li>
 						<li>
-							<a href="https://vinschool.edu.vn/news_event/vinschool-trien-khai-chuong-trinh-giao-duc-the-chat-vivokids-ban-quyen-tu-singapore/">Vivokids
+							<a href="javascript:void(0)">Vivokids
 								– Chương trình Giáo dục thể chất chuyên biệt giúp trẻ bứt phá thể chất tối ưu</a>
 						</li>
 					</ul>
@@ -850,78 +609,83 @@
 					<div class="top-bar-content">
 						<div class="top-meta">
 							<ul class="nav-lang">
-								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="index.html">VN</a></li>
-								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="https://vinschool.edu.vn/en/home-page/">EN</a></li>
+								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
+								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="javascript:void(0)">EN</a></li>
 							</ul>
 							<ul class="socials">
-								<li><a href="https://www.facebook.com/vinschool.vn/"><i class="icon-facebook"></i></a>
+								<li><a href="javascript:void(0)"><i class="icon-facebook"></i></a>
 								</li>
 								<li><a href="mailto:http://info@vinschool.edu.vn"><i class="icon-mail"></i></a></li>
-								<li><a href="https://www.youtube.com/channel/UCmRcPP6WcUJhGu_DvwceUrA"><i class="icon-youtube"></i></a></li>
+								<li><a href="javascript:void(0)"><i class="icon-youtube"></i></a></li>
 							</ul>
 						</div>
 						<nav class="menu-top-menu-vn-container">
 							<ul id="menu-top-menu-vn" class="top-menu">
-								<li id="menu-item-2470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2470 ">
-									<a href="https://vinschool.edu.vn/gioi-thieu/ve-tap-doan-vingroup/">Giới thiệu</a>
-									<ul class="sub-menu">
-										<li id="menu-item-158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-158 ">
-											<a href="https://vinschool.edu.vn/gioi-thieu/ve-tap-doan-vingroup/">Tập đoàn
-												Vingroup</a>
-										</li>
-										<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159 ">
-											<a href="https://vinschool.edu.vn/gioi-thieu/ve-he-thong-giao-duc-vinshool/">Hệ
-												thống Giáo dục Vinschool</a>
-										</li>
-										<li id="menu-item-18947" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18947 ">
-											<a href="https://vinschool.edu.vn/gioi-thieu/trung-tam-gate-vinschool/">Trung
-												tâm GATE</a>
-										</li>
-										<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160 ">
-											<a href="https://vinschool.edu.vn/gioi-thieu/he-gia-tri-cot-loi-vinser/">Hệ
-												giá trị cốt lõi Vinser</a>
-										</li>
-										<li id="menu-item-46067" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46067 ">
-											<a href="https://vinschool.edu.vn/gioi-thieu/chan-dung-vinsers/">Chân dung
-												Vinsers</a>
-										</li>
-										<li id="menu-item-161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-161 ">
-											<a href="https://vinschool.edu.vn/gioi-thieu/co-so-vat-chat/">Cơ sở vật
-												chất</a>
-										</li>
-									</ul>
-								</li>
+								<?php
+
+								$menus = get_terms('nav_menu', array('hide_empty' => true));
+								if (!empty($menus) && !is_wp_error($menus)) {
+									foreach ($menus as $menu) {
+										$menu_items = wp_get_nav_menu_items($menu->term_id);
+										$submenu = "";
+										if (!empty($menu_items)) {
+											foreach ($menu_items as $item) {
+												$submenu .= '
+												<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159 ">
+													<a href="'. $item->url .'">'. $item->title .'</a>
+												</li>
+												';
+											}
+										}
+
+
+										$output = '
+											<li id="menu-item-2470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2470 ">
+												<a href="javascript:void(0)">' . $menu->name . '</a>
+												<ul class="sub-menu">
+													'.$submenu.'
+												</ul>
+											</li>
+										';
+										echo $output;
+									}
+								}
+
+
+								?>
+
+
 								<li id="menu-item-13658" class="menu-item menu-item-type-post_type_archive menu-item-object-news_event menu-item-has-children menu-item-13658 ">
-									<a href="https://vinschool.edu.vn/news_event/">Tin Tức &#8211; Sự Kiện</a>
+									<a href="javascript:void(0)">Tin Tức &#8211; Sự Kiện</a>
 									<ul class="sub-menu">
 										<li id="menu-item-410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410 ">
 											<a href="news_event/index06d9.html?school_level=mam-non">Mầm non</a>
 										</li>
 										<li id="menu-item-411" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-411 ">
-											<a href="https://vinschool.edu.vn/news_event/?school_level=tieu-hoc">Tiểu
+											<a href="javascript:void(0)">Tiểu
 												học</a>
 										</li>
 										<li id="menu-item-412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412 ">
-											<a href="https://vinschool.edu.vn/news_event/?school_level=trung-hoc">Trung
+											<a href="javascript:void(0)">Trung
 												học</a>
 										</li>
 										<li id="menu-item-48858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48858 ">
-											<a href="https://vinschool.edu.vn/tam-ly-hoc-duong/">Tâm lý học đường</a>
+											<a href="javascript:void(0)">Tâm lý học đường</a>
 										</li>
 										<li id="menu-item-43750" class="menu-item menu-item-type-post_type_archive menu-item-object-tin-giao-duc menu-item-43750 ">
-											<a href="https://vinschool.edu.vn/tin-giao-duc/">Tin giáo dục</a>
+											<a href="javascript:void(0)">Tin giáo dục</a>
 										</li>
 									</ul>
 								</li>
 								<li id="menu-item-2477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2477 ">
-									<a href="https://vinschool.edu.vn/parent/?parent_type=thong-bao">Góc phụ huynh</a>
+									<a href="javascript:void(0)">Góc phụ huynh</a>
 									<ul class="sub-menu">
 										<li id="menu-item-2428" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2428 ">
-											<a href="https://vinschool.edu.vn/parent/?parent_type=thong-bao">Thông
+											<a href="javascript:void(0)">Thông
 												báo</a>
 										</li>
 										<li id="menu-item-2430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2430 ">
-											<a href="https://vinschool.edu.vn/parent/?parent_type=cam-nang-phu-huynh">Cẩm
+											<a href="javascript:void(0)">Cẩm
 												nang Phụ huynh</a>
 										</li>
 									</ul>
@@ -931,7 +695,7 @@
 										dụng</a>
 								</li>
 								<li id="menu-item-173" class="menu-item menu-item-type-post_type_archive menu-item-object-contact menu-item-173 ">
-									<a href="https://vinschool.edu.vn/contact/">Liên hệ</a>
+									<a href="javascript:void(0)">Liên hệ</a>
 								</li>
 							</ul>
 						</nav>
@@ -943,26 +707,26 @@
 			<div class="main-nav">
 				<div class="container">
 					<div class="main-nav-content">
-						<h1 class="logo"><a href="index.html"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></h1>
+						<h1 class="logo"><a href="<?php echo home_url(); ?>"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></h1>
 						<nav class="menu-top-secondary-menu-vn-container">
 							<ul id="menu-top-secondary-menu-vn" class="main-menu">
 								<li id="2482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-									<a href="https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-giao-duc-mam-non/">Chương
+									<a href="javascript:void(0)">Chương
 										trình giáo dục</a>
 									<div class="sub-menu-container">
 										<div class="container">
 											<div class="the-title h3">Chương trình giáo dục</div>
 											<ul class='sub-menu'>
 
-												<li id='menu-item-1419' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-giao-duc-mam-non/'>Chương
+												<li id='menu-item-1419' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chương
 														trình Giáo dục Mầm non
 													</a></li>
 
-												<li id='menu-item-1420' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-giao-duc-pho-thong/'>Chương
+												<li id='menu-item-1420' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chương
 														trình giáo dục Phổ thông
 													</a></li>
 
-												<li id='menu-item-1418' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-ngoai-khoa/'>Chương
+												<li id='menu-item-1418' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chương
 														trình ngoại khóa
 													</a></li>
 								</li>
@@ -970,24 +734,24 @@
 					</div>
 				</div>
 
-				<li id="2483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="https://vinschool.edu.vn/tuyen-sinh/thong-bao-tuyen-sinh-vinschool/">Tuyển sinh</a>
+				<li id="2483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">Tuyển sinh</a>
 					<div class="sub-menu-container">
 						<div class="container">
 							<div class="the-title h3">Tuyển sinh</div>
 							<ul class='sub-menu'>
 
-								<li id='menu-item-1422' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/tuyen-sinh/thong-bao-tuyen-sinh-vinschool/'>Thông
+								<li id='menu-item-1422' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Thông
 										báo tuyển sinh
 									</a></li>
 
-								<li id='menu-item-1423' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/tuyen-sinh/quy-che-tuyen-sinh/'>Quy chế tuyển
+								<li id='menu-item-1423' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Quy chế tuyển
 										sinh
 									</a></li>
 
-								<li id='menu-item-1424' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/tuyen-sinh/hoc-phi/'>Học phí
+								<li id='menu-item-1424' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Học phí
 									</a></li>
 
-								<li id='menu-item-1425' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/tuyen-sinh/cau-hoi-thuong-gap/'>Câu hỏi thường
+								<li id='menu-item-1425' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Câu hỏi thường
 										gặp
 									</a></li>
 				</li>
@@ -995,77 +759,77 @@
 			</div>
 		</div>
 
-		<li id="47327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="https://vinschool.edu.vn/ket-qua-hoc-tap/igcse-alevel/">Kết quả học tập</a>
+		<li id="47327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">Kết quả học tập</a>
 			<div class="sub-menu-container">
 				<div class="container">
 					<div class="the-title h3">Kết quả học tập</div>
 					<ul class='sub-menu'>
 
-						<li id='menu-item-47328' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/ket-qua-hoc-tap/igcse-alevel/'>IGCSE/AS-A Level
+						<li id='menu-item-47328' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">IGCSE/AS-A Level
 							</a></li>
 
-						<li id='menu-item-47346' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/ket-qua-hoc-tap/advanced-placement/'>Advanced Placement
+						<li id='menu-item-47346' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Advanced Placement
 								(AP)
 							</a></li>
 
-						<li id='menu-item-47373' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/ket-qua-hoc-tap/ket-qua-thi-tuyen-dai-hoc/'>Kết quả thi
+						<li id='menu-item-47373' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Kết quả thi
 								tuyển Đại học
 							</a></li>
 
-						<li id='menu-item-1433' class='menu-item menu-item-type-post_type_archive menu-item-object-vinser'><a href='https://vinschool.edu.vn/vinser/'>Gặp gỡ Vinsers
+						<li id='menu-item-1433' class='menu-item menu-item-type-post_type_archive menu-item-object-vinser'><a href="javascript:void(0)">Gặp gỡ Vinsers
 							</a></li>
 		</li>
 		</ul>
 		</div>
 		</div>
 
-		<li id="2484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/thoi-gian-bieu/">Cuộc sống học đường</a>
+		<li id="2484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">Cuộc sống học đường</a>
 			<div class="sub-menu-container">
 				<div class="container">
 					<div class="the-title h3">Cuộc sống học đường</div>
 					<ul class='sub-menu'>
 
-						<li id='menu-item-1427' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/cuoc-song-hoc-duong/thoi-gian-bieu/'>Thời gian biểu
+						<li id='menu-item-1427' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Thời gian biểu
 							</a></li>
 
-						<li id='menu-item-1428' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/cuoc-song-hoc-duong/dich-vu-ban-tru/'>Dịch vụ bán trú
+						<li id='menu-item-1428' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Dịch vụ bán trú
 							</a></li>
 
-						<li id='menu-item-1429' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/cuoc-song-hoc-duong/dich-vu-xe-buyt/'>Dịch vụ xe buýt
+						<li id='menu-item-1429' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Dịch vụ xe buýt
 							</a></li>
 
-						<li id='menu-item-1430' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/cuoc-song-hoc-duong/dong-phuc/'>Đồng phục
+						<li id='menu-item-1430' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Đồng phục
 							</a></li>
 
-						<li id='menu-item-1431' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/cuoc-song-hoc-duong/lich-nam-hoc/'>Lịch năm học
+						<li id='menu-item-1431' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Lịch năm học
 							</a></li>
 
-						<li id='menu-item-16294' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/cuoc-song-hoc-duong/thu-vien-anh-video/'>Thư viện Ảnh/
+						<li id='menu-item-16294' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Thư viện Ảnh/
 								Video
 							</a></li>
 
-						<li id="56784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="https://vinschool.edu.vn/an-toan-hoc-duong/bao-ve-hoc-sinh/">An toàn học đường</a>
+						<li id="56784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">An toàn học đường</a>
 							<div class="sub-menu-container">
 								<div class="container">
 									<ul class='sub-menu'>
 
-										<li id='menu-item-46984' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/an-toan-hoc-duong/bao-ve-hoc-sinh/'>Chính
+										<li id='menu-item-46984' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chính
 												sách bảo vệ trẻ em
 											</a></li>
 
-										<li id='menu-item-46983' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/an-toan-hoc-duong/xu-ly-cao-buoc-xam-hai/'>Xử
+										<li id='menu-item-46983' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Xử
 												lý cáo buộc xâm hại
 											</a></li>
 
-										<li id='menu-item-46992' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/an-toan-hoc-duong/tiep-xuc-hoc-sinh/'>Quy
+										<li id='menu-item-46992' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Quy
 												định tiếp xúc thân thể
 											</a></li>
 
-										<li id='menu-item-46998' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/an-toan-hoc-duong/moi-truong-mang/'>An
+										<li id='menu-item-46998' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">An
 												toàn trên môi trường mạng
 											</a></li>
 
-										<li id='menu-item-47012' class='menu-item menu-item-type-post_type menu-item-object-page'><a href='https://vinschool.edu.vn/an-toan-hoc-duong/quy-dinh-chong-bao-luc-bat-nat/'>Quy
+										<li id='menu-item-47012' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Quy
 												định chống bạo lực, bắt nạt
 											</a></li>
 						</li>
@@ -1095,10 +859,10 @@
 						<p class="logo"><a href="index.html"><img width="228" height="182" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20228%20182'%3E%3C/svg%3E" alt="#" data-lazy-src="https://vinschool.edu.vn/wp-content/themes/vsc/assets/img/logo.png"><noscript><img width="228" height="182" src="https://vinschool.edu.vn/wp-content/themes/vsc/assets/img/logo.png" alt="#"></noscript></a></p>
 						<div class="top-meta">
 							<ul class="socials">
-								<li><a href="https://www.facebook.com/vinschool.vn/"><i class="icon-facebook"></i></a>
+								<li><a href="javascript:void(0)"><i class="icon-facebook"></i></a>
 								</li>
 								<li><a href="mailto:http://info@vinschool.edu.vn"><i class="icon-mail"></i></a></li>
-								<li><a href="https://www.youtube.com/channel/UCmRcPP6WcUJhGu_DvwceUrA"><i class="icon-youtube"></i></a></li>
+								<li><a href="javascript:void(0)"><i class="icon-youtube"></i></a></li>
 							</ul>
 							<ul class="nav-lang">
 								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="index.html">VN</a></li>
@@ -1118,106 +882,106 @@
 				<nav class="menu-main-menu-mobile-vn-container">
 					<ul id="menu-main-menu-mobile-vn" class="main-menu-mb">
 						<li id="menu-item-2473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2473 ">
-							<a href="https://vinschool.edu.vn/gioi-thieu/ve-tap-doan-vingroup/">Giới thiệu</a>
+							<a href="javascript:void(0)">Giới thiệu</a>
 							<ul class="sub-menu">
-								<li id="menu-item-175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175 "><a href="https://vinschool.edu.vn/gioi-thieu/ve-tap-doan-vingroup/">Tập đoàn
+								<li id="menu-item-175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175 "><a href="javascript:void(0)">Tập đoàn
 										Vingroup</a></li>
-								<li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176 "><a href="https://vinschool.edu.vn/gioi-thieu/ve-he-thong-giao-duc-vinshool/">Hệ
+								<li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176 "><a href="javascript:void(0)">Hệ
 										thống Giáo dục Vinschool</a></li>
-								<li id="menu-item-18948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18948 "><a href="https://vinschool.edu.vn/gioi-thieu/trung-tam-gate-vinschool/">Trung tâm
+								<li id="menu-item-18948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18948 "><a href="javascript:void(0)">Trung tâm
 										GATE</a></li>
-								<li id="menu-item-177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177 "><a href="https://vinschool.edu.vn/gioi-thieu/he-gia-tri-cot-loi-vinser/">Hệ giá trị
+								<li id="menu-item-177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177 "><a href="javascript:void(0)">Hệ giá trị
 										cốt lõi Vinser</a></li>
-								<li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178 "><a href="https://vinschool.edu.vn/gioi-thieu/co-so-vat-chat/">Cơ sở vật chất</a>
+								<li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178 "><a href="javascript:void(0)">Cơ sở vật chất</a>
 								</li>
 							</ul>
 						</li>
 						<li id="menu-item-2492" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2492 ">
-							<a href="https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-giao-duc-mam-non/">Chương
+							<a href="javascript:void(0)">Chương
 								trình giáo dục</a>
 							<ul class="sub-menu">
-								<li id="menu-item-2493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2493 "><a href="https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-giao-duc-mam-non/">Chương
+								<li id="menu-item-2493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2493 "><a href="javascript:void(0)">Chương
 										trình Giáo dục Mầm non</a></li>
-								<li id="menu-item-2494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2494 "><a href="https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-giao-duc-pho-thong/">Chương
+								<li id="menu-item-2494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2494 "><a href="javascript:void(0)">Chương
 										trình giáo dục Phổ thông</a></li>
-								<li id="menu-item-2495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2495 "><a href="https://vinschool.edu.vn/chuong-trinh-giao-duc/chuong-trinh-ngoai-khoa/">Chương
+								<li id="menu-item-2495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2495 "><a href="javascript:void(0)">Chương
 										trình ngoại khóa</a></li>
 							</ul>
 						</li>
 						<li id="menu-item-2496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2496 ">
-							<a href="https://vinschool.edu.vn/tuyen-sinh/thong-bao-tuyen-sinh-vinschool/">Tuyển sinh</a>
+							<a href="javascript:void(0)">Tuyển sinh</a>
 							<ul class="sub-menu">
-								<li id="menu-item-2500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2500 "><a href="https://vinschool.edu.vn/tuyen-sinh/thong-bao-tuyen-sinh-vinschool/">Thông
+								<li id="menu-item-2500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2500 "><a href="javascript:void(0)">Thông
 										báo tuyển sinh</a></li>
-								<li id="menu-item-2497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2497 "><a href="https://vinschool.edu.vn/tuyen-sinh/quy-che-tuyen-sinh/">Quy chế tuyển
+								<li id="menu-item-2497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2497 "><a href="javascript:void(0)">Quy chế tuyển
 										sinh</a></li>
-								<li id="menu-item-2498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2498 "><a href="https://vinschool.edu.vn/tuyen-sinh/hoc-phi/">Học phí</a></li>
-								<li id="menu-item-2499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2499 "><a href="https://vinschool.edu.vn/tuyen-sinh/cau-hoi-thuong-gap/">Câu hỏi thường
+								<li id="menu-item-2498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2498 "><a href="javascript:void(0)">Học phí</a></li>
+								<li id="menu-item-2499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2499 "><a href="javascript:void(0)">Câu hỏi thường
 										gặp</a></li>
 							</ul>
 						</li>
 						<li id="menu-item-2488" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2488 ">
-							<a href="https://vinschool.edu.vn/news_event">Tin tức &#8211; Sự kiện</a>
+							<a href="javascript:void(0)">Tin tức &#8211; Sự kiện</a>
 							<ul class="sub-menu">
 								<li id="menu-item-2489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2489 "><a href="news_event/index06d9.html?school_level=mam-non">Mầm non</a></li>
-								<li id="menu-item-2490" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2490 "><a href="https://vinschool.edu.vn/news_event/?school_level=tieu-hoc">Tiểu học</a>
+								<li id="menu-item-2490" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2490 "><a href="javascript:void(0)">Tiểu học</a>
 								</li>
-								<li id="menu-item-2491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2491 "><a href="https://vinschool.edu.vn/news_event/?school_level=trung-hoc">Trung học</a>
+								<li id="menu-item-2491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2491 "><a href="javascript:void(0)">Trung học</a>
 								</li>
 							</ul>
 						</li>
 						<li id="menu-item-47332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-47332 ">
-							<a href="https://vinschool.edu.vn/ket-qua-hoc-tap/igcse-alevel/">Kết quả học tập</a>
+							<a href="javascript:void(0)">Kết quả học tập</a>
 							<ul class="sub-menu">
-								<li id="menu-item-47333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47333 "><a href="https://vinschool.edu.vn/ket-qua-hoc-tap/igcse-alevel/">IGCSE/AS-A
+								<li id="menu-item-47333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47333 "><a href="javascript:void(0)">IGCSE/AS-A
 										Level</a></li>
-								<li id="menu-item-47347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47347 "><a href="https://vinschool.edu.vn/ket-qua-hoc-tap/advanced-placement/">Advanced
+								<li id="menu-item-47347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47347 "><a href="javascript:void(0)">Advanced
 										Placement (AP)</a></li>
-								<li id="menu-item-47374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47374 "><a href="https://vinschool.edu.vn/ket-qua-hoc-tap/ket-qua-thi-tuyen-dai-hoc/">Kết
+								<li id="menu-item-47374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47374 "><a href="javascript:void(0)">Kết
 										quả thi tuyển Đại học</a></li>
 								<li id="menu-item-16055" class="menu-item menu-item-type-post_type_archive menu-item-object-vinser menu-item-16055 ">
-									<a href="https://vinschool.edu.vn/vinser/">Gặp gỡ Vinsers</a>
+									<a href="javascript:void(0)">Gặp gỡ Vinsers</a>
 								</li>
 							</ul>
 						</li>
 						<li id="menu-item-2486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2486 ">
-							<a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/thoi-gian-bieu/">Cuộc sống học
+							<a href="javascript:void(0)">Cuộc sống học
 								đường</a>
 							<ul class="sub-menu">
-								<li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185 "><a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/thoi-gian-bieu/">Thời gian
+								<li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185 "><a href="javascript:void(0)">Thời gian
 										biểu</a></li>
-								<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181 "><a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/dich-vu-ban-tru/">Dịch vụ bán
+								<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181 "><a href="javascript:void(0)">Dịch vụ bán
 										trú</a></li>
-								<li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182 "><a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/dich-vu-xe-buyt/">Dịch vụ xe
+								<li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182 "><a href="javascript:void(0)">Dịch vụ xe
 										buýt</a></li>
-								<li id="menu-item-183" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183 "><a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/dong-phuc/">Đồng phục</a>
+								<li id="menu-item-183" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183 "><a href="javascript:void(0)">Đồng phục</a>
 								</li>
-								<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184 "><a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/lich-nam-hoc/">Lịch năm
+								<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184 "><a href="javascript:void(0)">Lịch năm
 										học</a></li>
-								<li id="menu-item-16297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16297 "><a href="https://vinschool.edu.vn/cuoc-song-hoc-duong/thu-vien-anh-video/">Thư viện
+								<li id="menu-item-16297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16297 "><a href="javascript:void(0)">Thư viện
 										Ảnh/ Video</a></li>
 								<li id="menu-item-47215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-47215 ">
-									<a href="https://vinschool.edu.vn/an-toan-hoc-duong/bao-ve-hoc-sinh/">An toàn học
+									<a href="javascript:void(0)">An toàn học
 										đường</a>
 									<ul class="sub-menu">
 										<li id="menu-item-47018" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47018 ">
-											<a href="https://vinschool.edu.vn/an-toan-hoc-duong/bao-ve-hoc-sinh/">Chính
+											<a href="javascript:void(0)">Chính
 												sách bảo vệ trẻ em</a>
 										</li>
 										<li id="menu-item-47017" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47017 ">
-											<a href="https://vinschool.edu.vn/an-toan-hoc-duong/xu-ly-cao-buoc-xam-hai/">Xử
+											<a href="javascript:void(0)">Xử
 												lý cáo buộc xâm hại</a>
 										</li>
 										<li id="menu-item-47016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47016 ">
-											<a href="https://vinschool.edu.vn/an-toan-hoc-duong/tiep-xuc-hoc-sinh/">Quy
+											<a href="javascript:void(0)">Quy
 												định tiếp xúc thân thể</a>
 										</li>
 										<li id="menu-item-47015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47015 ">
-											<a href="https://vinschool.edu.vn/an-toan-hoc-duong/moi-truong-mang/">An
+											<a href="javascript:void(0)">An
 												toàn trên môi trường mạng</a>
 										</li>
 										<li id="menu-item-47014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47014 ">
-											<a href="https://vinschool.edu.vn/an-toan-hoc-duong/quy-dinh-chong-bao-luc-bat-nat/">Quy
+											<a href="javascript:void(0)">Quy
 												định chống bạo lực, bắt nạt</a>
 										</li>
 									</ul>
@@ -1225,12 +989,12 @@
 							</ul>
 						</li>
 						<li id="menu-item-16056" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16056 ">
-							<a href="https://vinschool.edu.vn/parent/?parent_type=thong-bao">Góc Phụ huynh</a>
+							<a href="javascript:void(0)">Góc Phụ huynh</a>
 							<ul class="sub-menu">
-								<li id="menu-item-16057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16057 "><a href="https://vinschool.edu.vn/parent/?parent_type=thong-bao">Thông báo</a></li>
-								<li id="menu-item-16058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16058 "><a href="https://vinschool.edu.vn/parent/?parent_type=talk-vinschool">Talk
+								<li id="menu-item-16057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16057 "><a href="javascript:void(0)">Thông báo</a></li>
+								<li id="menu-item-16058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16058 "><a href="javascript:void(0)">Talk
 										Vinschool</a></li>
-								<li id="menu-item-16059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16059 "><a href="https://vinschool.edu.vn/parent/?parent_type=cam-nang-phu-huynh">Cẩm nang
+								<li id="menu-item-16059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16059 "><a href="javascript:void(0)">Cẩm nang
 										Phụ huynh</a></li>
 							</ul>
 						</li>
@@ -1238,7 +1002,7 @@
 							<a target="_blank" rel="noopener" href="https://vinschool.edu.vn/career/">Tuyển dụng</a>
 						</li>
 						<li id="menu-item-16061" class="menu-item menu-item-type-post_type_archive menu-item-object-contact menu-item-16061 ">
-							<a href="https://vinschool.edu.vn/contact/">Liên hệ</a>
+							<a href="javascript:void(0)">Liên hệ</a>
 						</li>
 					</ul>
 				</nav>
@@ -1277,7 +1041,7 @@
 					</div>
 				</div>
 			</div>
-		</div> <a href="https://bit.ly/vsc_tuyensinh">
+		</div> <a href="javascript:void(0)">
 			<div data-bg="https://vinschool.edu.vn/wp-content/uploads/2023/03/13/PTLC-tuyen-sinh-scaled.jpg" class="banner-item banner-home rocket-lazyload" style="">
 
 				<div class="banner-text">
@@ -1286,7 +1050,7 @@
 					</div>
 				</div>
 			</div>
-		</a> <a href="https://bit.ly/vsc_tuyensinh">
+		</a> <a href="javascript:void(0)">
 			<div data-bg="https://vinschool.edu.vn/wp-content/uploads/2023/03/13/MN-tuyen-sinh-scaled.jpg" class="banner-item banner-home rocket-lazyload" style="">
 
 				<div class="banner-text">
@@ -1297,5 +1061,3 @@
 			</div>
 		</a>
 	</div>
-
-	
