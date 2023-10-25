@@ -53,12 +53,15 @@ function custom_category_posts_shortcode_1($atts)
     // Tạo biến để lưu nội dung của shortcode
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
-
+    
+    
+    $term = get_term( $category->term_id, 'category' );
+    
     $output = '
     <div class="block2 first"> 
     <div class="header-block2">
         <div class="title">
-            <div>' . $atts['category'] . '</div>
+            <div>' . $term->name . '</div>
         </div>
         <a href="' . $category_string . '">
             <button class="btn">Xem tất cả</button>
@@ -76,6 +79,7 @@ function custom_category_posts_shortcode_1($atts)
             $feature_image = get_featured_image_guid($post->ID);
 
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
+            $full_content = get_the_content();
 
             $output .= '
                 
@@ -85,13 +89,13 @@ function custom_category_posts_shortcode_1($atts)
                                 <img class="avt" src="' . $feature_image . '" />
                                 </a>
                                     <div class="content px-3">
-                                        <div class="new">' . $atts['category'] . '</div>
+                                        <div class="new">' . $term->name . '</div>
                                         <a href="' . get_permalink($post->ID) . '"> 
                                         <div class="description">
                                         ' . $post->post_title . '
                                         </div> </a>
                                         <div class="date">' . $post_date . '</div>
-                                        <div class="description-two">' . $post->post_excerpt . '</div>
+                                        <div class="description-two">' . custom_excerpt($full_content, 300) . '</div>
                                         <div class="continue">
                                             <a href="' . get_permalink($post->ID) . '">Xem thêm </a>
                                             <i class="fa-solid fa-arrow-right"></i>
@@ -140,13 +144,14 @@ function custom_category_posts_shortcode_2($atts)
     ));
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
+    $term = get_term( $category->term_id, 'category' );
     // Tạo biến để lưu nội dung của shortcode
     $output = '
     <div class="block3">
     <div class="block2 khac-mau">
         <div class="header-block2">
             <div class="title">
-                <div>' . $atts['category'] . '</div>
+                <div>' . $term->name . '</div>
             </div>
             <a href="' . $category_string . '">
                 <button class="btn">Xem tất cả</button>
@@ -162,6 +167,7 @@ function custom_category_posts_shortcode_2($atts)
             $feature_image = get_featured_image_guid($post->ID);
 
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
+            $full_content = get_the_content();
 
             $output .= '
             <div class="item-card col-lg-4 col-md-12 px-3">
@@ -171,7 +177,7 @@ function custom_category_posts_shortcode_2($atts)
                         </a>
 
                         <div class="content px-3">
-                            <div class="new">' . $atts['category'] . '</div>
+                            <div class="new">' . $term->name . '</div>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description">
                             ' . $post->post_title . '
@@ -180,10 +186,8 @@ function custom_category_posts_shortcode_2($atts)
                             <div class="date">' . $post_date . '</div>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description-two">
-                            Dưới những cơn mưa hè của tháng 6, không khí kỳ thi Tuyển
-                            sinh vào lớp 6 trường THPT chuyên Hà Nội - Amsterdam lại trở
-                            nên nóng hơn bao giờ hết. Ngày 23/6, hai điểm thi đã ...
-                        </div>
+                                '. custom_excerpt($full_content, 300) .'
+                            </div>
                             
                             </a>
 
@@ -236,48 +240,44 @@ function custom_category_posts_shortcode_3($atts)
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
     // Tạo biến để lưu nội dung của shortcode
-    $output = '
-        
-    ';
+    $output = `
+    
+    `;
     if (!empty($category_posts)) {
         foreach ($category_posts as $post) {
             setup_postdata($post);
-            $feature_image = get_featured_image_guid($post->ID);
-            $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
+            // $feature_image = get_featured_image_guid($post->ID);
+            // $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
 
-            $output .= '
+            // $output .= '
             
-            <div class="thong-tin" style="display: flex">
-                <img src="' . $feature_image . '" style="width:100%"/>
-                <div>
-                    <div class="quang-ba">
-                        ' . $post->post_title . '
-                    </div>
-                    <div class="date-time">' . $post_date . '</div>
-                    <div class="description-student">
-                        Trúng tuyển 12 trường ở Mỹ, Nguyễn Thảo Anh chọn trường duy nhất
-                        không cấp học bổng nhưng giúp em thỏa đam mê nghệ thuật. Thảo
-                        Anh, cựu học sinh lớp 12 Anh 1, trường THPT chuyên Hà Nội -
-                        Amsterdam, hoàn thành nộp hồ sơ ứng t uyển đại học vào đầu tháng
-                        5. Nữ sinh trúng tuyển 17 trường, cả ở Anh, Mỹ và Nhật Bản.
-                    </div>
-                    <div class="continue-student">
-                        <a href="' . get_permalink($post->ID) . '" class="xem-them">XEM THÊM <i class="fa-solid fa-arrow-right next"></i></a>
-                    </div>
-                </div>
-            </div>
+            // <div class="thong-tin" style="display: flex">
+            //     <img src="' . $feature_image . '" style="width:100%"/>
+            //     <div>
+            //         <div class="quang-ba">
+            //             ' . $post->post_title . '
+            //         </div>
+            //         <div class="date-time">' . $post_date . '</div>
+            //         <div class="description-student">
+            //             Trúng tuyển 12 trường ở Mỹ, Nguyễn Thảo Anh chọn trường duy nhất
+            //             không cấp học bổng nhưng giúp em thỏa đam mê nghệ thuật. Thảo
+            //             Anh, cựu học sinh lớp 12 Anh 1, trường THPT chuyên Hà Nội -
+            //             Amsterdam, hoàn thành nộp hồ sơ ứng t uyển đại học vào đầu tháng
+            //             5. Nữ sinh trúng tuyển 17 trường, cả ở Anh, Mỹ và Nhật Bản.
+            //         </div>
+            //         <div class="continue-student">
+            //             <a href="' . get_permalink($post->ID) . '" class="xem-them">XEM THÊM <i class="fa-solid fa-arrow-right next"></i></a>
+            //         </div>
+            //     </div>
+            // </div>
             
-            ';
+            // ';
         }
         wp_reset_postdata(); // Đặt lại dữ liệu bài viết
     } else {
         $output = 'Không có bài viết trong danh mục ' . $atts['category'];
     }
-    $output .= '    
-    </div>
-    </div>
-</div>
-    ';
+    
 
     // Hiển thị danh sách bài viết
 
@@ -316,3 +316,28 @@ function get_featured_image_guid($post_id)
 //     return $template;
 // }
 // add_filter('template_include', 'custom_category_template');
+
+
+function custom_excerpt($content, $length = 50, $more = '...') {
+    // Loại bỏ các thẻ HTML
+    $no_tags = strip_tags($content);
+
+    // Cắt nội dung
+    if (mb_strlen($no_tags) > $length) {
+        $excerpt = mb_substr($no_tags, 0, $length) . $more;
+    } else {
+        $excerpt = $no_tags;
+    }
+    
+    return $excerpt;
+}
+
+function register_my_menu() {
+    register_nav_menus(
+      array(
+        'gioi-thieu' => __( 'Giới thiệu' ), // 'header-menu' là vị trí menu trong theme
+        // bạn có thể đăng ký thêm vị trí menu ở đây
+      )
+    );
+  }
+  add_action( 'init', 'register_my_menu' );

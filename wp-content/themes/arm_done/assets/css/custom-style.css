@@ -321,12 +321,14 @@
         color: #0068af;
         font-size: 20px;
         padding-bottom: 14px;
+        height: 150px;
     }
 
     .description-two {
         color: black;
         font-size: 14px;
         padding-bottom: 75px;
+        height: 100px;
     }
 
     .wrapper-card {
@@ -551,4 +553,15 @@
         border-top: 0;
         border-bottom: 0;
         margin-bottom: 0;
+    }
+
+
+    .conveyor_ticker .container:before {
+        background: unset !important;
+        background-color: transparent !important;
+
+    }
+    .conveyor_ticker .container:after {
+        background: unset !important;
+        background-color: transparent !important;
     }
