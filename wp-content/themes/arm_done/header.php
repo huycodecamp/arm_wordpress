@@ -572,7 +572,6 @@
 </head>
 
 <body style="background-color: white">
-	class="home page-template page-template-page-home page-template-page-home-php page page-id-45866 wp-custom-logo wp-schema-pro-1.3.0 home-page bg-dark-blue register_online_summer_camp vi-lang">
 
 	<header id="header">
 		<div class="conveyor_ticker text-white" style="background-color:#003e69">
@@ -621,10 +620,12 @@
 						</div>
 						<nav class="menu-top-menu-vn-container">
 							<ul id="menu-top-menu-vn" class="top-menu">
-								<?php
 
-								$menus = get_terms('nav_menu', array('hide_empty' => true));
+
+								<?php
+								$menus = get_terms('nav_menu', array('hide_empty' => false));
 								if (!empty($menus) && !is_wp_error($menus)) {
+									//Tim ra thang home va viet vfao day
 									foreach ($menus as $menu) {
 										$menu_items = wp_get_nav_menu_items($menu->term_id);
 										$submenu = "";
@@ -632,7 +633,7 @@
 											foreach ($menu_items as $item) {
 												$submenu .= '
 												<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159 ">
-													<a href="'. $item->url .'">'. $item->title .'</a>
+													<a href="' . $item->url . '">' . $item->title . '</a>
 												</li>
 												';
 											}
@@ -643,63 +644,23 @@
 											<li id="menu-item-2470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2470 ">
 												<a href="javascript:void(0)">' . $menu->name . '</a>
 												<ul class="sub-menu">
-													'.$submenu.'
+													' . $submenu . '
 												</ul>
 											</li>
 										';
 										echo $output;
 									}
 								}
-
-
 								?>
 
 
-								<li id="menu-item-13658" class="menu-item menu-item-type-post_type_archive menu-item-object-news_event menu-item-has-children menu-item-13658 ">
-									<a href="javascript:void(0)">Tin Tức &#8211; Sự Kiện</a>
-									<ul class="sub-menu">
-										<li id="menu-item-410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410 ">
-											<a href="news_event/index06d9.html?school_level=mam-non">Mầm non</a>
-										</li>
-										<li id="menu-item-411" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-411 ">
-											<a href="javascript:void(0)">Tiểu
-												học</a>
-										</li>
-										<li id="menu-item-412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412 ">
-											<a href="javascript:void(0)">Trung
-												học</a>
-										</li>
-										<li id="menu-item-48858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48858 ">
-											<a href="javascript:void(0)">Tâm lý học đường</a>
-										</li>
-										<li id="menu-item-43750" class="menu-item menu-item-type-post_type_archive menu-item-object-tin-giao-duc menu-item-43750 ">
-											<a href="javascript:void(0)">Tin giáo dục</a>
-										</li>
-									</ul>
-								</li>
-								<li id="menu-item-2477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2477 ">
-									<a href="javascript:void(0)">Góc phụ huynh</a>
-									<ul class="sub-menu">
-										<li id="menu-item-2428" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2428 ">
-											<a href="javascript:void(0)">Thông
-												báo</a>
-										</li>
-										<li id="menu-item-2430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2430 ">
-											<a href="javascript:void(0)">Cẩm
-												nang Phụ huynh</a>
-										</li>
-									</ul>
-								</li>
-								<li id="menu-item-170" class="menu-item menu-item-type-post_type_archive menu-item-object-career menu-item-170 ">
-									<a target="_blank" rel="noopener" href="https://vinschool.edu.vn/career/">Tuyển
-										dụng</a>
-								</li>
-								<li id="menu-item-173" class="menu-item menu-item-type-post_type_archive menu-item-object-contact menu-item-173 ">
-									<a href="javascript:void(0)">Liên hệ</a>
-								</li>
+
 							</ul>
 						</nav>
-						<a class="btn btn-secondary btn-top btn-register__online" href="https://vinschool.edu.vn/vinschool-one/" style="background-color:#ffbd49; border:none">TUYỂN SINH</a>
+						<a class="btn btn-secondary btn-top btn-register__online" href="javascript:void(0)" style="background-color:#ffbd49; border:none; display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;">TUYỂN SINH</a>
 
 					</div>
 				</div>
@@ -708,8 +669,12 @@
 				<div class="container">
 					<div class="main-nav-content">
 						<h1 class="logo"><a href="<?php echo home_url(); ?>"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></h1>
+						
 						<nav class="menu-top-secondary-menu-vn-container">
 							<ul id="menu-top-secondary-menu-vn" class="main-menu">
+
+								
+
 								<li id="2482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
 									<a href="javascript:void(0)">Chương
 										trình giáo dục</a>
@@ -755,7 +720,7 @@
 										gặp
 									</a></li>
 				</li>
-				</ul>
+					</ul>
 			</div>
 		</div>
 

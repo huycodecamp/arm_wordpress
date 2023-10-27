@@ -239,39 +239,58 @@ function custom_category_posts_shortcode_3($atts)
     ));
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
+    $term = get_term( $category->term_id, 'category' );
     // Tạo biến để lưu nội dung của shortcode
-    $output = `
-    
-    `;
+    $output = '<section class="section block-vincers block2" >
+    <div class="block-heading border-light">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="the-title text-white border-light wow fadeInLeft">' . $term->name . '</h2>
+            </div>
+            <div class="col-lg-5 text-right"><a class="btn btn-primary text-white wow fadeInRight"
+                    href="' . $category_string . '">XEM TẤT CẢ</a></div>
+        </div>
+    </div>
+    <div class="vincers-slider carousel"
+        data-slick=\'{"arrows":true,"dots":true,"slidesToShow":1,"slidesToScroll":1,"infinite":false,"responsive":[{"breakpoint":480,"settings":{"arrows":false}}]}\'>';
+
     if (!empty($category_posts)) {
         foreach ($category_posts as $post) {
             setup_postdata($post);
-            // $feature_image = get_featured_image_guid($post->ID);
-            // $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
+            $feature_image = get_featured_image_guid($post->ID);
+            $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
+            $full_content = get_the_content();
 
-            // $output .= '
+
+            $output .= '
             
-            // <div class="thong-tin" style="display: flex">
-            //     <img src="' . $feature_image . '" style="width:100%"/>
-            //     <div>
-            //         <div class="quang-ba">
-            //             ' . $post->post_title . '
-            //         </div>
-            //         <div class="date-time">' . $post_date . '</div>
-            //         <div class="description-student">
-            //             Trúng tuyển 12 trường ở Mỹ, Nguyễn Thảo Anh chọn trường duy nhất
-            //             không cấp học bổng nhưng giúp em thỏa đam mê nghệ thuật. Thảo
-            //             Anh, cựu học sinh lớp 12 Anh 1, trường THPT chuyên Hà Nội -
-            //             Amsterdam, hoàn thành nộp hồ sơ ứng t uyển đại học vào đầu tháng
-            //             5. Nữ sinh trúng tuyển 17 trường, cả ở Anh, Mỹ và Nhật Bản.
-            //         </div>
-            //         <div class="continue-student">
-            //             <a href="' . get_permalink($post->ID) . '" class="xem-them">XEM THÊM <i class="fa-solid fa-arrow-right next"></i></a>
-            //         </div>
-            //     </div>
-            // </div>
+            <div class="slider-item">
+					<div class="row">
+						<div class="col-md-5"><a
+								href="' . get_permalink($post->ID) . '">
+                                    <img
+									width="1363" height="2048" class="img-fluid"
+									src="' . $feature_image . '"
+									data-lazy-src="' . $feature_image . '"><noscript><img
+										width="1363" height="2048" class="img-fluid"
+										src="' . $feature_image . '"></noscript></a>
+						</div>
+						<div class="col-md-6 col-xl-7 vincer-summary wow fadeInDown">
+							<div class="the-title hero-title text-white h2">' . $post->post_title . '</div>
+							<div class="summary-block">'. custom_excerpt($full_content, 300) .'</div>
+							<ul class="border-list">
+								<li>Đoạt 9 học bổng tại các trường Đại học danh giá về Nghệ thuật và Thiết kế tại Hoa Kỳ
+								</li>
+								<li>IELTS 8.0, SAT 1460, 5/5 AP 2-D Art & Design</li>
+							</ul>
+							<p><a class="read-more text-white"
+									href="' . get_permalink($post->ID) . '">XEM
+									TIẾP &gt;</a></p>
+						</div>
+					</div>
+				</div>
             
-            // ';
+            ';
         }
         wp_reset_postdata(); // Đặt lại dữ liệu bài viết
     } else {
@@ -279,12 +298,18 @@ function custom_category_posts_shortcode_3($atts)
     }
     
 
+    $output .= '
+    </div>
+</section>';
+
     // Hiển thị danh sách bài viết
 
 
     return $output;
 }
 add_shortcode('category_posts_v3', 'custom_category_posts_shortcode_3');
+
+
 
 add_theme_support('post-thumbnails');
 function get_featured_image_guid($post_id)
@@ -335,9 +360,14 @@ function custom_excerpt($content, $length = 50, $more = '...') {
 function register_my_menu() {
     register_nav_menus(
       array(
-        'gioi-thieu' => __( 'Giới thiệu' ), // 'header-menu' là vị trí menu trong theme
+        'Home' => __( 'Home' ), // 'header-menu' là vị trí menu trong theme
+        'gioi-thieu' => __( 'Giới thiệu' ),
+        'News' => __( 'News' ),
+        'HNA' => __( 'HNA-35 năm xây dựng & phát triển' ),
+        'School' => __( 'School' ),
         // bạn có thể đăng ký thêm vị trí menu ở đây
       )
     );
   }
   add_action( 'init', 'register_my_menu' );
+

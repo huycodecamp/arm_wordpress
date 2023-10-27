@@ -52,23 +52,6 @@
 
 
 
-	<!-- List buttons sticky -->
-	<div class="wrap_list_buttons_sticky">
-		<ul class="list_buttons_sticky">
-			<li>
-				<a class="icon-btn" href="https://vinschool.edu.vn/dang-ky-tham-quan/" title="" target="_blank">
-					<img width="347" height="346"
-						src="https://vinschool.edu.vn/wp-content/uploads/2022/10/07/button-1.png" alt="icon button">
-				</a>
-			</li>
-			<li>
-				<a class="icon-btn" href="https://bit.ly/vsc_tuyensinh" title="" target="_blank">
-					<img width="347" height="346"
-						src="https://vinschool.edu.vn/wp-content/uploads/2022/10/07/button-2.png" alt="icon button">
-				</a>
-			</li>
-		</ul>
-	</div>
 
 	<script type='text/javascript' id='contact-form-7-js-extra'>
 		/* <![CDATA[ */

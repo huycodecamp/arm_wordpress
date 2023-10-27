@@ -23,6 +23,7 @@ Author URI: https://wordpress.org/
     box-sizing: inherit;
 }
 
+
 html {
     font-family: AvenirNext, serif;
     box-sizing: border-box;
@@ -364,6 +365,27 @@ max-height: 200px;
 .avt{
     max-height: 300px;
     height: 300px;
+}
+
+.bg-white{
+    box-shadow: 5px 5px 10px #888888;
+}
+
+.description{
+    height: 130px;
+}
+
+
+.description-two{
+    height: 150px;
+}
+
+.conveyor_ticker .container:before {
+    background: none !important;
+}
+
+.conveyor_ticker .container:after {
+    background: none !important;
 }
 
 .description-box{
