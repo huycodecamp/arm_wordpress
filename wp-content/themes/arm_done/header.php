@@ -672,9 +672,6 @@
 						
 						<nav class="menu-top-secondary-menu-vn-container">
 							<ul id="menu-top-secondary-menu-vn" class="main-menu">
-
-								
-
 								<li id="2482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
 									<a href="javascript:void(0)">Chương
 										trình giáo dục</a>
