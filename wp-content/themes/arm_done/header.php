@@ -624,9 +624,12 @@
 
 								<?php
 								$menus = get_terms('nav_menu', array('hide_empty' => false));
-								if (!empty($menus) && !is_wp_error($menus)) {
+								$sliceArrMenuTren = array_slice($menus, 0, 5);
+								$sliceArrMenuDuoi = array_slice($menus, 5, 9);
+
+								if (!empty($sliceArrMenuTren) && !is_wp_error($sliceArrMenuTren)) {
 									//Tim ra thang home va viet vfao day
-									foreach ($menus as $menu) {
+									foreach ($sliceArrMenuTren as $menu) {
 										$menu_items = wp_get_nav_menu_items($menu->term_id);
 										$submenu = "";
 										if (!empty($menu_items)) {
@@ -669,153 +672,65 @@
 				<div class="container">
 					<div class="main-nav-content">
 						<h1 class="logo"><a href="<?php echo home_url(); ?>"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></h1>
-						
+
 						<nav class="menu-top-secondary-menu-vn-container">
 							<ul id="menu-top-secondary-menu-vn" class="main-menu">
-
+								<?php
 								
 
-								<li id="2482" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-									<a href="javascript:void(0)">Chương
-										trình giáo dục</a>
-									<div class="sub-menu-container">
-										<div class="container">
-											<div class="the-title h3">Chương trình giáo dục</div>
-											<ul class='sub-menu'>
+								if (!empty($sliceArrMenuDuoi) && !is_wp_error($sliceArrMenuDuoi)) {
+									//Tim ra thang home va viet vfao day
+									foreach ($sliceArrMenuDuoi as $menu) {
+										$menu_items = wp_get_nav_menu_items($menu->term_id);
+										$submenu = "";
+										if (!empty($menu_items)) {
+											foreach ($menu_items as $item) {
 
-												<li id='menu-item-1419' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chương
-														trình Giáo dục Mầm non
-													</a></li>
 
-												<li id='menu-item-1420' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chương
-														trình giáo dục Phổ thông
-													</a></li>
+												$submenu .= '
+												<li id=\'menu-item-47328\' class=\'menu-item menu-item-type-post_type menu-item-object-page\'>
+													<a href="' . $item->url . '">' . $item->title . '
+													</a>
+												</li>
+												';
+											}
+										}
+										$output = '
+										<li id="47327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">'. $menu->name .'</a>
+											<div class="sub-menu-container">
+												<div class="container">
+													<div class="the-title h3">' . $menu->name . '</div>
+													<ul class=\'sub-menu\'>
 
-												<li id='menu-item-1418' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chương
-														trình ngoại khóa
-													</a></li>
-								</li>
+														' . $submenu . '
+										</li>
+										</ul>
+										</div>
+										</div>
+										';
+
+										echo $output;
+									}
+								}
+
+
+								?>
+
+
+
+
+
 							</ul>
+						</nav>
+						<div class="top-search">
+							<form class="search-form" method="get" action="https://vinschool.edu.vn/">
+								<input class="form-control" type="search" name="s" value="" placeholder="Tìm kiếm...">
+								<button class="search-button" type="submit"><i class="icon-search"></i></button>
+							</form>
+						</div>
 					</div>
 				</div>
-
-				<li id="2483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">Tuyển sinh</a>
-					<div class="sub-menu-container">
-						<div class="container">
-							<div class="the-title h3">Tuyển sinh</div>
-							<ul class='sub-menu'>
-
-								<li id='menu-item-1422' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Thông
-										báo tuyển sinh
-									</a></li>
-
-								<li id='menu-item-1423' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Quy chế tuyển
-										sinh
-									</a></li>
-
-								<li id='menu-item-1424' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Học phí
-									</a></li>
-
-								<li id='menu-item-1425' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Câu hỏi thường
-										gặp
-									</a></li>
-				</li>
-					</ul>
 			</div>
-		</div>
-
-		<li id="47327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">Kết quả học tập</a>
-			<div class="sub-menu-container">
-				<div class="container">
-					<div class="the-title h3">Kết quả học tập</div>
-					<ul class='sub-menu'>
-
-						<li id='menu-item-47328' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">IGCSE/AS-A Level
-							</a></li>
-
-						<li id='menu-item-47346' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Advanced Placement
-								(AP)
-							</a></li>
-
-						<li id='menu-item-47373' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Kết quả thi
-								tuyển Đại học
-							</a></li>
-
-						<li id='menu-item-1433' class='menu-item menu-item-type-post_type_archive menu-item-object-vinser'><a href="javascript:void(0)">Gặp gỡ Vinsers
-							</a></li>
-		</li>
-		</ul>
-		</div>
-		</div>
-
-		<li id="2484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">Cuộc sống học đường</a>
-			<div class="sub-menu-container">
-				<div class="container">
-					<div class="the-title h3">Cuộc sống học đường</div>
-					<ul class='sub-menu'>
-
-						<li id='menu-item-1427' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Thời gian biểu
-							</a></li>
-
-						<li id='menu-item-1428' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Dịch vụ bán trú
-							</a></li>
-
-						<li id='menu-item-1429' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Dịch vụ xe buýt
-							</a></li>
-
-						<li id='menu-item-1430' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Đồng phục
-							</a></li>
-
-						<li id='menu-item-1431' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Lịch năm học
-							</a></li>
-
-						<li id='menu-item-16294' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Thư viện Ảnh/
-								Video
-							</a></li>
-
-						<li id="56784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">An toàn học đường</a>
-							<div class="sub-menu-container">
-								<div class="container">
-									<ul class='sub-menu'>
-
-										<li id='menu-item-46984' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Chính
-												sách bảo vệ trẻ em
-											</a></li>
-
-										<li id='menu-item-46983' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Xử
-												lý cáo buộc xâm hại
-											</a></li>
-
-										<li id='menu-item-46992' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Quy
-												định tiếp xúc thân thể
-											</a></li>
-
-										<li id='menu-item-46998' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">An
-												toàn trên môi trường mạng
-											</a></li>
-
-										<li id='menu-item-47012' class='menu-item menu-item-type-post_type menu-item-object-page'><a href="javascript:void(0)">Quy
-												định chống bạo lực, bắt nạt
-											</a></li>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</li>
-		</ul>
-		</div>
-		</div>
-		</ul>
-		</nav>
-		<div class="top-search">
-			<form class="search-form" method="get" action="https://vinschool.edu.vn/">
-				<input class="form-control" type="search" name="s" value="" placeholder="Tìm kiếm...">
-				<button class="search-button" type="submit"><i class="icon-search"></i></button>
-			</form>
-		</div>
-		</div>
-		</div>
-		</div>
 		</div>
 		<div class="header-mb">
 			<div class="top-bar">
