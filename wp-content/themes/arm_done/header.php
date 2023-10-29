@@ -626,7 +626,7 @@
 								<?php
 
 								$sliceArrMenuTren = array_slice($menus, 0, 5);
-								$sliceArrMenuDuoi = array_slice($menus, 5, 4);
+								$sliceArrMenuDuoi = array_slice($menus, 5, 5);
 
 								if (!empty($sliceArrMenuTren) && !is_wp_error($sliceArrMenuTren)) {
 									//Tim ra thang home va viet vfao day

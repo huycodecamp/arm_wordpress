@@ -365,6 +365,12 @@ function register_my_menu() {
         'News' => __( 'News' ),
         'HNA' => __( 'HNA-35 năm xây dựng & phát triển' ),
         'School' => __( 'School' ),
+        'Scholarship' => __( 'Scholarship' ),
+        'Văn bản' => __( 'Văn bản' ),
+        'Alumni' => __( 'Alumni' ),
+        'Cựu giáo chức' => __( 'Cựu giáo chức' ),
+        'Tuyển Sinh' => __( 'Tuyển Sinh' ),
+
         // bạn có thể đăng ký thêm vị trí menu ở đây
       )
     );
