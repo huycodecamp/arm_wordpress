@@ -4,7 +4,17 @@
 
 <?php get_header() ?>
 
-
+<?php
+    $categories = get_the_category();
+    
+    $firstCategories = null;
+    $term = null;
+    if ( ! empty( $categories ) ) {
+        $firstCategories = $categories[0];
+        $term = get_term( $firstCategories->term_id, 'category' );
+    }
+    $firstCategories    
+?>
 
 <div class="container">
     <div class="row">
@@ -12,9 +22,9 @@
             <article class="news-detail post-detail">
                 <nav class="vsc-breadcrumb vsc-breadcrumb-border" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../../index.html">Trang chủ</a></li>
-                        <li class="breadcrumb-item"><a href="https://vinschool.edu.vn/news_event/">Tin tức - Sự kiện</a></li>
-                        <li class="breadcrumb-item active">Ngắm nụ cười rạng rỡ của Vinsers nhí trong ngày đầu tiên tại ngôi trường mới</li>
+                        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Trang chủ</a></li>
+                        <!-- <li class="breadcrumb-item"><a href="<?php echo (get_site_url() . '?cat=' . $firstCategories->term_id); ?>"><?php $firstCategories->cat_name ?></a></li> -->
+                        <li class="breadcrumb-item active"><?php  the_title(); ?></li>
                     </ol>
                 </nav>
 
@@ -51,7 +61,7 @@
 
             <?php
         // Lấy ID chuyên mục của bài đăng hiện tại
-        $categories = get_the_category();
+        
         $category_ids = array();
 
         if (!empty($categories)) {

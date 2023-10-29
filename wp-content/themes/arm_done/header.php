@@ -9,14 +9,13 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="apple-touch-icon" href="https://vinschool.edu.vn/apple-touch-icon.png">
-	<link rel="shortcut icon" href="https://vinschool.edu.vn/wp-content/themes/vsc/favicon.ico" />
+	
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 
 	<meta name='robots' content='max-image-preview:large' />
 
 	<!-- This site is optimized with the Yoast SEO Premium plugin v15.0 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Trang chủ - Vinschool</title>
+	<title>Hn - Armschool</title>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/homepage.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/custom-style.css" />
 	<style type="text/css">
@@ -572,32 +571,34 @@
 </head>
 
 <body style="background-color: white">
-
+	<?php
+	$menus = get_terms('nav_menu', array('hide_empty' => false));
+	$sliceArrMenuTop = array_slice($menus, 9, 3);
+	?>
 	<header id="header">
 		<div class="conveyor_ticker text-white" style="background-color:#003e69">
 			<div class="container header_bg">
 				<div class="js-conveyor-1">
 					<ul>
-						<li>
-							<a href="javascript:void(0)">Chúc
-								mừng Vinsers giành 916 điểm tuyệt đối A*/A trong kì thi IGCSE và AS/A-Level</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">Giúp trẻ nuôi dưỡng tài
-								năng và Phát triển toàn diện với Câu lạc bộ Ngoại khóa Mầm non Vinschool</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">Khám
-								phá những CLB Ngoại khóa được Vinsers Tiểu học yêu thích nhất</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">Những
-								lý do khiến Vinsers không nên bỏ lỡ CLB ngoại khóa Trung học 2023 - 2024</a>
-						</li>
-						<li>
-							<a href="javascript:void(0)">Vivokids
-								– Chương trình Giáo dục thể chất chuyên biệt giúp trẻ bứt phá thể chất tối ưu</a>
-						</li>
+						<?php
+						var_dump($sliceArrMenuTop);
+						if (!empty($sliceArrMenuTop) && !is_wp_error($sliceArrMenuTop)) {
+							$output = "";
+							foreach ($sliceArrMenuTop as $menu) {
+								$menu_items = wp_get_nav_menu_items($menu->term_id);
+								if (!empty($menu_items)) {
+									$menu_item = $menu_items[0];
+									$output .= '
+									<li>
+										<a href="' . $menu_item->url . '">' . $menu_item->name . '</a>
+									</li>
+									';
+								}
+							}
+							echo $output;
+						}
+						?>
+
 					</ul>
 				</div>
 			</div>
@@ -623,9 +624,9 @@
 
 
 								<?php
-								$menus = get_terms('nav_menu', array('hide_empty' => false));
+
 								$sliceArrMenuTren = array_slice($menus, 0, 5);
-								$sliceArrMenuDuoi = array_slice($menus, 5, 9);
+								$sliceArrMenuDuoi = array_slice($menus, 5, 4);
 
 								if (!empty($sliceArrMenuTren) && !is_wp_error($sliceArrMenuTren)) {
 									//Tim ra thang home va viet vfao day
@@ -676,7 +677,7 @@
 						<nav class="menu-top-secondary-menu-vn-container">
 							<ul id="menu-top-secondary-menu-vn" class="main-menu">
 								<?php
-								
+
 
 								if (!empty($sliceArrMenuDuoi) && !is_wp_error($sliceArrMenuDuoi)) {
 									//Tim ra thang home va viet vfao day
@@ -696,7 +697,7 @@
 											}
 										}
 										$output = '
-										<li id="47327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">'. $menu->name .'</a>
+										<li id="47327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">' . $menu->name . '</a>
 											<div class="sub-menu-container">
 												<div class="container">
 													<div class="the-title h3">' . $menu->name . '</div>
