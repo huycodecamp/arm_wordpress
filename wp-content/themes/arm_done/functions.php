@@ -1,4 +1,11 @@
 <?php
+
+// Get the path to the current theme directory
+$theme_directory = get_template_directory();
+
+// Include a file named 'myfile.php' from the current theme directory
+require_once($theme_directory . '/model/CustomMenu.php');
+
 function custom_field_meta_box()
 {
     add_meta_box(
@@ -376,4 +383,5 @@ function register_my_menu() {
     );
   }
   add_action( 'init', 'register_my_menu' );
+
 

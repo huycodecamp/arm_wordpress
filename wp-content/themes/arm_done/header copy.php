@@ -573,7 +573,10 @@
 <body style="background-color: white">
 	<?php
 	// $menu = new Custom_Walker_Nav_Menu();
-
+	wp_nav_menu(array(
+		'theme_location' => 'primary',
+		'walker' => new Custom_Walker_Nav_Menu(),
+	));
 
 	// $menuGlobal = get_terms('nav_menu', array('hide_empty' => false));
 
@@ -588,7 +591,7 @@
 	// foreach ($menusAll as $menu) {
 	// 	var_dump($menu);
 	// 	if ($menu->menu_item_parent == $menuGlobal[0]->term_id) {
-
+			
 	// 		$secondLevel[] = $menu;
 	// 	}
 	// }
@@ -632,32 +635,6 @@
 								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
 								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="javascript:void(0)">EN</a></li>
 							</ul>
-							<div class="menu-1-wrap">
-								<?php
-
-								$option = array(
-									'menu'                 => '1445',
-									'container'            => 'div',
-									'container_class'      => '',
-									'container_id'         => '',
-									'container_aria_label' => '',
-									'menu_class'           => 'menu',
-									'menu_id'              => '',
-									'echo'                 => true,
-									'fallback_cb'          => 'wp_page_menu',
-									'before'               => '',
-									'after'                => '',
-									'link_before'          => '',
-									'link_after'           => '',
-									'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-									'item_spacing'         => 'preserve',
-									'depth'                => 0,
-									'walker'               => new Custom_Walker_Nav_Menu(),
-									'theme_location'       => '',
-								);
-								wp_nav_menu($option);
-								?>
-							</div>
 							<ul class="socials">
 								<li><a href="javascript:void(0)"><i class="icon-facebook"></i></a>
 								</li>
@@ -665,7 +642,48 @@
 								<li><a href="javascript:void(0)"><i class="icon-youtube"></i></a></li>
 							</ul>
 						</div>
+						<nav class="menu-top-menu-vn-container">
+							<ul id="menu-top-menu-vn" class="top-menu">
 
+
+								<?php
+
+								$sliceArrMenuTren = array_slice($menus, 0, 5);
+								$sliceArrMenuDuoi = array_slice($menus, 5, 5);
+
+								if (!empty($sliceArrMenuTren) && !is_wp_error($sliceArrMenuTren)) {
+									//Tim ra thang home va viet vfao day
+									foreach ($sliceArrMenuTren as $menu) {
+										$menu_items = wp_get_nav_menu_items($menu->term_id);
+										$submenu = "";
+										if (!empty($menu_items)) {
+											foreach ($menu_items as $item) {
+												$submenu .= '
+												<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159 ">
+													<a href="' . $item->url . '">' . $item->title . '</a>
+												</li>
+												';
+											}
+										}
+
+
+										$output = '
+											<li id="menu-item-2470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2470 ">
+												<a href="javascript:void(0)">' . $menu->name . '</a>
+												<ul class="sub-menu">
+													' . $submenu . '
+												</ul>
+											</li>
+										';
+										echo $output;
+									}
+								}
+								?>
+
+
+
+							</ul>
+						</nav>
 						<a class="btn btn-secondary btn-top btn-register__online" href="javascript:void(0)" style="background-color:#ffbd49; border:none; display: flex;
     align-items: center;
     justify-content: center;
