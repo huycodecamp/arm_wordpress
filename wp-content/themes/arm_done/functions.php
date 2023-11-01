@@ -53,10 +53,10 @@ function custom_category_posts_shortcode_1($atts)
     // Tạo biến để lưu nội dung của shortcode
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
-    
-    
-    $term = get_term( $category->term_id, 'category' );
-    
+
+
+    $term = get_term($category->term_id, 'category');
+
     $output = '
     <div class="block2 first"> 
     <div class="header-block2">
@@ -144,7 +144,7 @@ function custom_category_posts_shortcode_2($atts)
     ));
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
-    $term = get_term( $category->term_id, 'category' );
+    $term = get_term($category->term_id, 'category');
     // Tạo biến để lưu nội dung của shortcode
     $output = '
     <div class="block3">
@@ -186,7 +186,7 @@ function custom_category_posts_shortcode_2($atts)
                             <div class="date">' . $post_date . '</div>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description-two">
-                                '. custom_excerpt($full_content, 300) .'
+                                ' . custom_excerpt($full_content, 300) . '
                             </div>
                             
                             </a>
@@ -239,7 +239,7 @@ function custom_category_posts_shortcode_3($atts)
     ));
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
-    $term = get_term( $category->term_id, 'category' );
+    $term = get_term($category->term_id, 'category');
     // Tạo biến để lưu nội dung của shortcode
     $output = '<section class="section block-vincers block2" >
     <div class="block-heading border-light">
@@ -277,7 +277,7 @@ function custom_category_posts_shortcode_3($atts)
 						</div>
 						<div class="col-md-6 col-xl-7 vincer-summary wow fadeInDown">
 							<div class="the-title hero-title text-white h2">' . $post->post_title . '</div>
-							<div class="summary-block">'. custom_excerpt($full_content, 300) .'</div>
+							<div class="summary-block">' . custom_excerpt($full_content, 300) . '</div>
 							<ul class="border-list">
 								<li>Đoạt 9 học bổng tại các trường Đại học danh giá về Nghệ thuật và Thiết kế tại Hoa Kỳ
 								</li>
@@ -296,7 +296,7 @@ function custom_category_posts_shortcode_3($atts)
     } else {
         $output = 'Không có bài viết trong danh mục ' . $atts['category'];
     }
-    
+
 
     $output .= '
     </div>
@@ -343,7 +343,8 @@ function get_featured_image_guid($post_id)
 // add_filter('template_include', 'custom_category_template');
 
 
-function custom_excerpt($content, $length = 50, $more = '...') {
+function custom_excerpt($content, $length = 50, $more = '...')
+{
     // Loại bỏ các thẻ HTML
     $no_tags = strip_tags($content);
 
@@ -353,27 +354,59 @@ function custom_excerpt($content, $length = 50, $more = '...') {
     } else {
         $excerpt = $no_tags;
     }
-    
+
     return $excerpt;
 }
 
-function register_my_menu() {
+function register_my_menu()
+{
     register_nav_menus(
-      array(
-        'Home' => __( 'Home' ), // 'header-menu' là vị trí menu trong theme
-        'gioi-thieu' => __( 'Giới thiệu' ),
-        'News' => __( 'News' ),
-        'HNA' => __( 'HNA-35 năm xây dựng & phát triển' ),
-        'School' => __( 'School' ),
-        'Scholarship' => __( 'Scholarship' ),
-        'Văn bản' => __( 'Văn bản' ),
-        'Alumni' => __( 'Alumni' ),
-        'Cựu giáo chức' => __( 'Cựu giáo chức' ),
-        'Tuyển Sinh' => __( 'Tuyển Sinh' ),
-
-        // bạn có thể đăng ký thêm vị trí menu ở đây
-      )
+        array(
+            'Home' => __('Home'), // 'header-menu' là vị trí menu trong theme
+            // bạn có thể đăng ký thêm vị trí menu ở đây
+        )
     );
-  }
-  add_action( 'init', 'register_my_menu' );
+}
+add_action('init', 'register_my_menu');
+
+
+// Xử lý yêu cầu tìm kiếm AJAX
+add_action('wp_ajax_search_posts', 'search_posts_callback');
+add_action('wp_ajax_nopriv_search_posts', 'search_posts_callback');
+function search_posts_callback()
+{
+    $keyword = sanitize_text_field($_GET['keyword']);
+
+    $args = array(
+        's' => $keyword,
+        'post_type' => 'post',
+        'post_status' => 'publish'
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+
+        while ($query->have_posts()) {
+            $query->the_post();
+            // Hiển thị kết quả gợi ý (ví dụ: tiêu đề bài viết)
+            $title = get_the_title();
+
+            // Hạn chế tiêu đề chỉ hiển thị 30 ký tự và thêm "..." nếu cần
+            $shortened_title = strlen($title) > 30 ? substr($title, 0, 30) . '...' : $title;
+            echo '
+            <ul class="top-menu">
+                <li class="" style="">
+                    <a href="' . get_permalink() . '">' . $shortened_title . '</a><br> 
+                </li>
+            </ul>
+            ';
+        }
+        
+    } else {
+        echo 'Không tìm thấy kết quả.';
+    }
+
+    wp_die();
+}
 

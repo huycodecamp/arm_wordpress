@@ -9,7 +9,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	
+
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 
 	<meta name='robots' content='max-image-preview:large' />
@@ -571,32 +571,39 @@
 </head>
 
 <body style="background-color: white">
-	<?php
-	$menus = get_terms('nav_menu', array('hide_empty' => false));
-	$sliceArrMenuTop = array_slice($menus, 9, 3);
-	?>
+
 	<header id="header">
 		<div class="conveyor_ticker text-white" style="background-color:#003e69">
 			<div class="container header_bg">
 				<div class="js-conveyor-1">
 					<ul>
+
 						<?php
-						var_dump($sliceArrMenuTop);
-						if (!empty($sliceArrMenuTop) && !is_wp_error($sliceArrMenuTop)) {
-							$output = "";
-							foreach ($sliceArrMenuTop as $menu) {
-								$menu_items = wp_get_nav_menu_items($menu->term_id);
-								if (!empty($menu_items)) {
-									$menu_item = $menu_items[0];
-									$output .= '
-									<li>
-										<a href="' . $menu_item->url . '">' . $menu_item->name . '</a>
-									</li>
-									';
-								}
+
+						$menus = get_terms('nav_menu', array('hide_empty' => false));
+						$sliceArrMenuTop = array_slice($menus, 9, 3);
+
+						$args = array(
+							'post_type' => 'post', // Điều chỉnh thành kiểu bài viết mong muốn
+							'orderby' => 'rand',  // Sắp xếp bài viết ngẫu nhiên
+							'posts_per_page' => 3 // Số bài viết hiển thị
+						);
+
+						$random_posts = get_posts($args);
+
+						if (!empty($random_posts)) {
+
+							foreach ($random_posts as $post) {
+								$output .= '
+										<li>
+											<a href="' . get_permalink($post->ID) . '">' . $post->post_title . '</a>
+										</li>';
 							}
+
 							echo $output;
 						}
+
+
 						?>
 
 					</ul>
@@ -624,38 +631,44 @@
 
 
 								<?php
-
-								$sliceArrMenuTren = array_slice($menus, 0, 5);
-								$sliceArrMenuDuoi = array_slice($menus, 5, 5);
-
-								if (!empty($sliceArrMenuTren) && !is_wp_error($sliceArrMenuTren)) {
-									//Tim ra thang home va viet vfao day
-									foreach ($sliceArrMenuTren as $menu) {
+								if (!empty($menus) && !is_wp_error($menus)) {
+									foreach ($menus as $menu) {
 										$menu_items = wp_get_nav_menu_items($menu->term_id);
-										$submenu = "";
+
 										if (!empty($menu_items)) {
-											foreach ($menu_items as $item) {
-												$submenu .= '
-												<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159 ">
-													<a href="' . $item->url . '">' . $item->title . '</a>
-												</li>
-												';
+											// Lấy ra mục menu cấp 1
+											$menu_level_1 = array_filter($menu_items, function ($item) {
+												return $item->menu_item_parent == 0;
+											});
+
+											// Chỉ lấy 4 phần tử đầu tiên của mục menu cấp 1
+											$menu_level_1 = array_slice($menu_level_1, 0, 5);
+
+											foreach ($menu_level_1 as $item) {
+												echo '<li id="menu-item-' . $item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+                     							<a href="' . get_permalink($post->ID) . '">' . $item->title . '</a>';
+
+												// Lấy ra mục menu cấp 2
+												$menu_level_2 = array_filter($menu_items, function ($sub_item) use ($item) {
+													return $sub_item->menu_item_parent == $item->ID;
+												});
+
+												if (!empty($menu_level_2)) {
+													echo '<ul class="sub-menu">';
+													foreach ($menu_level_2 as $sub_item) {
+														echo '<li id="menu-item-' . $sub_item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page">
+														<a href="' . get_permalink($post->ID) . '">' . $sub_item->title . '</a>
+														</li>';
+													}
+													echo '</ul>';
+												}
+												echo '</li>';
 											}
 										}
-
-
-										$output = '
-											<li id="menu-item-2470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2470 ">
-												<a href="javascript:void(0)">' . $menu->name . '</a>
-												<ul class="sub-menu">
-													' . $submenu . '
-												</ul>
-											</li>
-										';
-										echo $output;
 									}
 								}
 								?>
+
 
 
 
@@ -676,46 +689,49 @@
 
 						<nav class="menu-top-secondary-menu-vn-container">
 							<ul id="menu-top-secondary-menu-vn" class="main-menu">
+
+
 								<?php
-
-
-								if (!empty($sliceArrMenuDuoi) && !is_wp_error($sliceArrMenuDuoi)) {
-									//Tim ra thang home va viet vfao day
-									foreach ($sliceArrMenuDuoi as $menu) {
+								if (!empty($menus) && !is_wp_error($menus)) {
+									foreach ($menus as $menu) {
 										$menu_items = wp_get_nav_menu_items($menu->term_id);
-										$submenu = "";
+
 										if (!empty($menu_items)) {
-											foreach ($menu_items as $item) {
+											$menu_level_1 = array_filter($menu_items, function ($item) {
+												return $item->menu_item_parent == 0;
+											});
 
+											// Lấy 4 danh mục tiếp theo sau 4 danh mục đầu tiên
+											$menu_level_1 = array_slice($menu_level_1, 5, 5);
 
-												$submenu .= '
-												<li id=\'menu-item-47328\' class=\'menu-item menu-item-type-post_type menu-item-object-page\'>
-													<a href="' . $item->url . '">' . $item->title . '
-													</a>
-												</li>
-												';
+											foreach ($menu_level_1 as $item) {
+												echo '<li id="menu-item-' . $item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+                      							<a href="' . get_permalink($post->ID) . '">' . $item->title . '</a>';
+
+												$menu_level_2 = array_filter($menu_items, function ($sub_item) use ($item) {
+													return $sub_item->menu_item_parent == $item->ID;
+												});
+
+												if (!empty($menu_level_2)) {
+													echo '<div class="sub-menu-container">
+														<div class="container">
+														<div class="the-title h3">' . $item->title . '</div>
+														<ul class="sub-menu">';
+													foreach ($menu_level_2 as $sub_item) {
+														echo '<li id="menu-item-' . $sub_item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page">
+																<a href="' . get_permalink($post->ID) . '">' . $sub_item->title . '</a>
+																</li>';
+													}
+													echo '</ul></div></div>';
+												}
+												echo '</li>';
 											}
 										}
-										$output = '
-										<li id="47327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="javascript:void(0)">' . $menu->name . '</a>
-											<div class="sub-menu-container">
-												<div class="container">
-													<div class="the-title h3">' . $menu->name . '</div>
-													<ul class=\'sub-menu\'>
-
-														' . $submenu . '
-										</li>
-										</ul>
-										</div>
-										</div>
-										';
-
-										echo $output;
 									}
 								}
-
-
 								?>
+
+
 
 
 
@@ -723,12 +739,40 @@
 
 							</ul>
 						</nav>
+
 						<div class="top-search">
-							<form class="search-form" method="get" action="https://vinschool.edu.vn/">
-								<input class="form-control" type="search" name="s" value="" placeholder="Tìm kiếm...">
+							<form class="search-form" method="get" action="<?php echo home_url('/'); ?>">
+								<input class="form-control" type="search" name="s" id="search-input" value="<?php echo get_search_query(); ?>" placeholder="Tìm kiếm...">
 								<button class="search-button" type="submit"><i class="icon-search"></i></button>
 							</form>
+							<div id="search-suggestions"></div>
 						</div>
+
+						<script>
+							// JavaScript sử dụng AJAX để tìm kiếm động và hiển thị gợi ý
+							var searchInput = document.getElementById('search-input');
+							var searchSuggestions = document.getElementById('search-suggestions');
+
+							searchInput.addEventListener('input', function() {
+								var keyword = this.value;
+
+								if (keyword.length > 0) {
+									// Gửi yêu cầu AJAX khi người dùng nhập từ khóa
+									var xhr = new XMLHttpRequest();
+									xhr.open('GET', '<?php echo admin_url('admin-ajax.php'); ?>?action=search_posts&keyword=' + keyword, true);
+									xhr.onreadystatechange = function() {
+										if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+											// Hiển thị kết quả gợi ý
+											searchSuggestions.innerHTML = xhr.responseText;
+										}
+									};
+									xhr.send();
+								} else {
+									searchSuggestions.innerHTML = ''; // Xóa gợi ý khi không có từ khóa
+								}
+							});
+						</script>
+
 					</div>
 				</div>
 			</div>
@@ -757,134 +801,61 @@
 			<div class="main-nav-mb">
 				<div class="d-flex">
 					<a class="btn btn-secondary btn-top" href="https://vinschool.edu.vn/vinschool-one/">ĐĂNG KÝ TUYỂN
-						SINH TRỰC TUYẾN VINSCHOOL ONE</a>
+						SINH TRỰC TUYẾN Amsterdam</a>
 
 				</div>
 				<nav class="menu-main-menu-mobile-vn-container">
 					<ul id="menu-main-menu-mobile-vn" class="main-menu-mb">
-						<li id="menu-item-2473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2473 ">
-							<a href="javascript:void(0)">Giới thiệu</a>
-							<ul class="sub-menu">
-								<li id="menu-item-175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175 "><a href="javascript:void(0)">Tập đoàn
-										Vingroup</a></li>
-								<li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176 "><a href="javascript:void(0)">Hệ
-										thống Giáo dục Vinschool</a></li>
-								<li id="menu-item-18948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18948 "><a href="javascript:void(0)">Trung tâm
-										GATE</a></li>
-								<li id="menu-item-177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177 "><a href="javascript:void(0)">Hệ giá trị
-										cốt lõi Vinser</a></li>
-								<li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178 "><a href="javascript:void(0)">Cơ sở vật chất</a>
-								</li>
-							</ul>
-						</li>
-						<li id="menu-item-2492" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2492 ">
-							<a href="javascript:void(0)">Chương
-								trình giáo dục</a>
-							<ul class="sub-menu">
-								<li id="menu-item-2493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2493 "><a href="javascript:void(0)">Chương
-										trình Giáo dục Mầm non</a></li>
-								<li id="menu-item-2494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2494 "><a href="javascript:void(0)">Chương
-										trình giáo dục Phổ thông</a></li>
-								<li id="menu-item-2495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2495 "><a href="javascript:void(0)">Chương
-										trình ngoại khóa</a></li>
-							</ul>
-						</li>
-						<li id="menu-item-2496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2496 ">
-							<a href="javascript:void(0)">Tuyển sinh</a>
-							<ul class="sub-menu">
-								<li id="menu-item-2500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2500 "><a href="javascript:void(0)">Thông
-										báo tuyển sinh</a></li>
-								<li id="menu-item-2497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2497 "><a href="javascript:void(0)">Quy chế tuyển
-										sinh</a></li>
-								<li id="menu-item-2498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2498 "><a href="javascript:void(0)">Học phí</a></li>
-								<li id="menu-item-2499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2499 "><a href="javascript:void(0)">Câu hỏi thường
-										gặp</a></li>
-							</ul>
-						</li>
-						<li id="menu-item-2488" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2488 ">
-							<a href="javascript:void(0)">Tin tức &#8211; Sự kiện</a>
-							<ul class="sub-menu">
-								<li id="menu-item-2489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2489 "><a href="news_event/index06d9.html?school_level=mam-non">Mầm non</a></li>
-								<li id="menu-item-2490" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2490 "><a href="javascript:void(0)">Tiểu học</a>
-								</li>
-								<li id="menu-item-2491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2491 "><a href="javascript:void(0)">Trung học</a>
-								</li>
-							</ul>
-						</li>
-						<li id="menu-item-47332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-47332 ">
-							<a href="javascript:void(0)">Kết quả học tập</a>
-							<ul class="sub-menu">
-								<li id="menu-item-47333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47333 "><a href="javascript:void(0)">IGCSE/AS-A
-										Level</a></li>
-								<li id="menu-item-47347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47347 "><a href="javascript:void(0)">Advanced
-										Placement (AP)</a></li>
-								<li id="menu-item-47374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47374 "><a href="javascript:void(0)">Kết
-										quả thi tuyển Đại học</a></li>
-								<li id="menu-item-16055" class="menu-item menu-item-type-post_type_archive menu-item-object-vinser menu-item-16055 ">
-									<a href="javascript:void(0)">Gặp gỡ Vinsers</a>
-								</li>
-							</ul>
-						</li>
-						<li id="menu-item-2486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2486 ">
-							<a href="javascript:void(0)">Cuộc sống học
-								đường</a>
-							<ul class="sub-menu">
-								<li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185 "><a href="javascript:void(0)">Thời gian
-										biểu</a></li>
-								<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181 "><a href="javascript:void(0)">Dịch vụ bán
-										trú</a></li>
-								<li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182 "><a href="javascript:void(0)">Dịch vụ xe
-										buýt</a></li>
-								<li id="menu-item-183" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183 "><a href="javascript:void(0)">Đồng phục</a>
-								</li>
-								<li id="menu-item-184" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184 "><a href="javascript:void(0)">Lịch năm
-										học</a></li>
-								<li id="menu-item-16297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16297 "><a href="javascript:void(0)">Thư viện
-										Ảnh/ Video</a></li>
-								<li id="menu-item-47215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-47215 ">
-									<a href="javascript:void(0)">An toàn học
-										đường</a>
-									<ul class="sub-menu">
-										<li id="menu-item-47018" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47018 ">
-											<a href="javascript:void(0)">Chính
-												sách bảo vệ trẻ em</a>
-										</li>
-										<li id="menu-item-47017" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47017 ">
-											<a href="javascript:void(0)">Xử
-												lý cáo buộc xâm hại</a>
-										</li>
-										<li id="menu-item-47016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47016 ">
-											<a href="javascript:void(0)">Quy
-												định tiếp xúc thân thể</a>
-										</li>
-										<li id="menu-item-47015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47015 ">
-											<a href="javascript:void(0)">An
-												toàn trên môi trường mạng</a>
-										</li>
-										<li id="menu-item-47014" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47014 ">
-											<a href="javascript:void(0)">Quy
-												định chống bạo lực, bắt nạt</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li id="menu-item-16056" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16056 ">
-							<a href="javascript:void(0)">Góc Phụ huynh</a>
-							<ul class="sub-menu">
-								<li id="menu-item-16057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16057 "><a href="javascript:void(0)">Thông báo</a></li>
-								<li id="menu-item-16058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16058 "><a href="javascript:void(0)">Talk
-										Vinschool</a></li>
-								<li id="menu-item-16059" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16059 "><a href="javascript:void(0)">Cẩm nang
-										Phụ huynh</a></li>
-							</ul>
-						</li>
-						<li id="menu-item-16060" class="menu-item menu-item-type-post_type_archive menu-item-object-career menu-item-16060 ">
-							<a target="_blank" rel="noopener" href="https://vinschool.edu.vn/career/">Tuyển dụng</a>
-						</li>
-						<li id="menu-item-16061" class="menu-item menu-item-type-post_type_archive menu-item-object-contact menu-item-16061 ">
-							<a href="javascript:void(0)">Liên hệ</a>
-						</li>
+
+
+
+
+
+						<?php
+						if (!empty($menus) && !is_wp_error($menus)) {
+							foreach ($menus as $menu) {
+								$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+								if (!empty($menu_items)) {
+									// Lấy ra mục menu cấp 1
+									$menu_level_1 = array_filter($menu_items, function ($item) {
+										return $item->menu_item_parent == 0;
+									});
+
+									// Chỉ lấy 4 phần tử đầu tiên của mục menu cấp 1
+									$menu_level_1 = array_slice($menu_level_1, 0, 4);
+
+									foreach ($menu_level_1 as $item) {
+										echo '<li id="menu-item-' . $item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+                     							<a href="' . get_permalink($post->ID) . '">' . $item->title . '</a>';
+
+										// Lấy ra mục menu cấp 2
+										$menu_level_2 = array_filter($menu_items, function ($sub_item) use ($item) {
+											return $sub_item->menu_item_parent == $item->ID;
+										});
+
+										if (!empty($menu_level_2)) {
+											echo '<ul class="sub-menu">';
+											foreach ($menu_level_2 as $sub_item) {
+												echo '<li id="menu-item-' . $sub_item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page">
+														<a href="' . get_permalink($post->ID) . '">' . $sub_item->title . '</a>
+														</li>';
+											}
+											echo '</ul>';
+										}
+										echo '</li>';
+									}
+								}
+							}
+						}
+						?>
+
+
+
+						
+
+
+
 					</ul>
 				</nav>
 				<div class="mb-search">
