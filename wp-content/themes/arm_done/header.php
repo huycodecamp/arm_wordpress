@@ -646,7 +646,7 @@
 
 											foreach ($menu_level_1 as $item) {
 												echo '<li id="menu-item-' . $item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-                     							<a href="' . get_permalink($post->ID) . '">' . $item->title . '</a>';
+                  								<a href="' . $item->url . '">' . $item->title . '</a>'; // Chỉnh sửa ở đây
 
 												// Lấy ra mục menu cấp 2
 												$menu_level_2 = array_filter($menu_items, function ($sub_item) use ($item) {
@@ -657,8 +657,7 @@
 													echo '<ul class="sub-menu">';
 													foreach ($menu_level_2 as $sub_item) {
 														echo '<li id="menu-item-' . $sub_item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page">
-														<a href="' . get_permalink($post->ID) . '">' . $sub_item->title . '</a>
-														</li>';
+                        							<a href="' . $sub_item->url . '">' . $sub_item->title . '</a></li>'; // Chỉnh sửa ở đây
 													}
 													echo '</ul>';
 												}
@@ -668,6 +667,7 @@
 									}
 								}
 								?>
+
 
 
 
@@ -706,7 +706,7 @@
 
 											foreach ($menu_level_1 as $item) {
 												echo '<li id="menu-item-' . $item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-                      							<a href="' . get_permalink($post->ID) . '">' . $item->title . '</a>';
+                  								<a href="' . $item->url . '">' . $item->title . '</a>'; // Chỉnh sửa ở đây
 
 												$menu_level_2 = array_filter($menu_items, function ($sub_item) use ($item) {
 													return $sub_item->menu_item_parent == $item->ID;
@@ -714,13 +714,12 @@
 
 												if (!empty($menu_level_2)) {
 													echo '<div class="sub-menu-container">
-														<div class="container">
-														<div class="the-title h3">' . $item->title . '</div>
-														<ul class="sub-menu">';
+													<div class="container">
+													<div class="the-title h3">' . $item->title . '</div>
+													<ul class="sub-menu">';
 													foreach ($menu_level_2 as $sub_item) {
 														echo '<li id="menu-item-' . $sub_item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page">
-																<a href="' . get_permalink($post->ID) . '">' . $sub_item->title . '</a>
-																</li>';
+                            							<a href="' . $sub_item->url . '">' . $sub_item->title . '</a></li>'; // Chỉnh sửa ở đây
 													}
 													echo '</ul></div></div>';
 												}
@@ -730,6 +729,7 @@
 									}
 								}
 								?>
+
 
 
 
@@ -778,10 +778,10 @@
 			</div>
 		</div>
 		<div class="header-mb">
-			<div class="top-bar">
+			<div class="top-bar" style="background-color:rgb(0 123 255 / 75%)">
 				<div class="container">
 					<div class="top-bar-content">
-						<p class="logo"><a href="index.html"><img width="228" height="182" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20228%20182'%3E%3C/svg%3E" alt="#" data-lazy-src="https://vinschool.edu.vn/wp-content/themes/vsc/assets/img/logo.png"><noscript><img width="228" height="182" src="https://vinschool.edu.vn/wp-content/themes/vsc/assets/img/logo.png" alt="#"></noscript></a></p>
+						<p class="logo"><a href="<?php echo home_url(); ?>"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="#" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></p>
 						<div class="top-meta">
 							<ul class="socials">
 								<li><a href="javascript:void(0)"><i class="icon-facebook"></i></a>
@@ -852,7 +852,7 @@
 
 
 
-						
+
 
 
 
