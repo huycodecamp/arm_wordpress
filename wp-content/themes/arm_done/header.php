@@ -18,6 +18,7 @@
 	<title>Hn - Armschool</title>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/homepage.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/custom-style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style type="text/css">
 		img.wp-smiley,
 		img.emoji {
@@ -620,10 +621,10 @@
 								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="javascript:void(0)">EN</a></li>
 							</ul>
 							<ul class="socials">
-								<li><a href="javascript:void(0)"><i class="icon-facebook"></i></a>
+								<li><a href="javascript:void(0)"><i class="fa-brands fa-facebook-f"></i></a>
 								</li>
-								<li><a href="mailto:http://info@vinschool.edu.vn"><i class="icon-mail"></i></a></li>
-								<li><a href="javascript:void(0)"><i class="icon-youtube"></i></a></li>
+								<li><a href="mailto:http://info@vinschool.edu.vn"><i class="fa-regular fa-envelope"></i></a></li>
+								<li><a href="javascript:void(0)"><i class="fa-brands fa-youtube"></i></a></li>
 							</ul>
 						</div>
 						<nav class="menu-top-menu-vn-container">
@@ -702,7 +703,7 @@
 											});
 
 											// Lấy 4 danh mục tiếp theo sau 4 danh mục đầu tiên
-											$menu_level_1 = array_slice($menu_level_1, 5, 5);
+											$menu_level_1 = array_slice($menu_level_1, 5, 4);
 
 											foreach ($menu_level_1 as $item) {
 												echo '<li id="menu-item-' . $item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
@@ -730,22 +731,15 @@
 								}
 								?>
 
-
-
-
-
-
-
-
 							</ul>
 						</nav>
 
-						<div class="top-search">
+						<div class="top-search" style="position: relative !important;">
 							<form class="search-form" method="get" action="<?php echo home_url('/'); ?>">
 								<input class="form-control" type="search" name="s" id="search-input" value="<?php echo get_search_query(); ?>" placeholder="Tìm kiếm...">
-								<button class="search-button" type="submit"><i class="icon-search"></i></button>
+								<button class="search-button" style="margin-top:-20px" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 							</form>
-							<div id="search-suggestions"></div>
+							<div class="result-search" id="search-suggestions" style="position: absolute;"></div>
 						</div>
 
 						<script>
@@ -807,10 +801,6 @@
 				<nav class="menu-main-menu-mobile-vn-container">
 					<ul id="menu-main-menu-mobile-vn" class="main-menu-mb">
 
-
-
-
-
 						<?php
 						if (!empty($menus) && !is_wp_error($menus)) {
 							foreach ($menus as $menu) {
@@ -859,10 +849,13 @@
 					</ul>
 				</nav>
 				<div class="mb-search">
-					<form class="search-form" method="get" action="https://vinschool.edu.vn/">
-						<input class="form-control" type="search" name="s" value="" placeholder="Tìm kiếm...">
-						<button class="search-button" type="submit"><i class="icon-search"></i></button>
-					</form>
+					<div class="top-search" style="position: relative !important;">
+						<form class="search-form" method="get" action="<?php echo home_url('/'); ?>">
+							<input class="form-control" type="search" name="s" id="search-input" value="<?php echo get_search_query(); ?>" placeholder="Tìm kiếm...">
+							<button class="search-button" style="margin-top:-20px" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+						</form>
+						<div class="result-search" id="search-suggestions" style="position: absolute;"></div>
+					</div>
 				</div>
 			</div>
 			<a class="backdrop-mb" href="#"></a>
@@ -885,7 +878,7 @@
 			</div>
 		</div>
 		<div>
-			<div data-bg="https://vinschool.edu.vn/wp-content/uploads/2023/09/20/MicrosoftTeams-image-scaled.jpg" class="banner-item banner-home rocket-lazyload" style="">
+			<div data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/block1.png" class="banner-item banner-home rocket-lazyload" style="">
 
 				<div class="banner-text">
 					<div class="container">
@@ -894,7 +887,7 @@
 				</div>
 			</div>
 		</div> <a href="javascript:void(0)">
-			<div data-bg="https://vinschool.edu.vn/wp-content/uploads/2023/03/13/PTLC-tuyen-sinh-scaled.jpg" class="banner-item banner-home rocket-lazyload" style="">
+			<div data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/block1.png" class="banner-item banner-home rocket-lazyload" style="">
 
 				<div class="banner-text">
 					<div class="container">
@@ -903,7 +896,7 @@
 				</div>
 			</div>
 		</a> <a href="javascript:void(0)">
-			<div data-bg="https://vinschool.edu.vn/wp-content/uploads/2023/03/13/MN-tuyen-sinh-scaled.jpg" class="banner-item banner-home rocket-lazyload" style="">
+			<div data-bg="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/block1.png" class="banner-item banner-home rocket-lazyload" style="">
 
 				<div class="banner-text">
 					<div class="container">

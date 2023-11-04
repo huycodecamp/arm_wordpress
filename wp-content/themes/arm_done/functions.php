@@ -82,7 +82,6 @@ function custom_category_posts_shortcode_1($atts)
             $full_content = get_the_content();
 
             $output .= '
-                
                             <div class="item-card col-lg-4 col-md-12 px-3">
                                 <div class="bg-white">
                                 <a href="' . get_permalink($post->ID) . '">
@@ -92,10 +91,10 @@ function custom_category_posts_shortcode_1($atts)
                                         <div class="new">' . $term->name . '</div>
                                         <a href="' . get_permalink($post->ID) . '"> 
                                         <div class="description">
-                                        ' . $post->post_title . '
+                                        ' . substr($post->post_title, 0, 60) . (strlen($post->post_title) > 60 ? '...' : '') . '
                                         </div> </a>
                                         <div class="date">' . $post_date . '</div>
-                                        <div class="description-two">' . custom_excerpt($full_content, 300) . '</div>
+                                        <div class="description-two">' . custom_excerpt($full_content, 200) . '</div>
                                         <div class="continue">
                                             <a href="' . get_permalink($post->ID) . '">Xem thêm </a>
                                             <i class="fa-solid fa-arrow-right"></i>
@@ -180,13 +179,13 @@ function custom_category_posts_shortcode_2($atts)
                             <div class="new">' . $term->name . '</div>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description">
-                            ' . $post->post_title . '
+                            ' . substr($post->post_title, 0, 60) . (strlen($post->post_title) > 60 ? '...' : '') . '
                             </div> </a>
 
                             <div class="date">' . $post_date . '</div>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description-two">
-                                ' . custom_excerpt($full_content, 300) . '
+                                ' . custom_excerpt($full_content, 200) . '
                             </div>
                             
                             </a>
@@ -277,7 +276,7 @@ function custom_category_posts_shortcode_3($atts)
 						</div>
 						<div class="col-md-6 col-xl-7 vincer-summary wow fadeInDown">
 							<div class="the-title hero-title text-white h2">' . $post->post_title . '</div>
-							<div class="summary-block">' . custom_excerpt($full_content, 300) . '</div>
+							<div class="summary-block">' . custom_excerpt($full_content, 200) . '</div>
 							<ul class="border-list">
 								<li>Đoạt 9 học bổng tại các trường Đại học danh giá về Nghệ thuật và Thiết kế tại Hoa Kỳ
 								</li>
@@ -370,6 +369,10 @@ function register_my_menu()
 add_action('init', 'register_my_menu');
 
 
+
+
+
+
 // Xử lý yêu cầu tìm kiếm AJAX
 add_action('wp_ajax_search_posts', 'search_posts_callback');
 add_action('wp_ajax_nopriv_search_posts', 'search_posts_callback');
@@ -380,7 +383,9 @@ function search_posts_callback()
     $args = array(
         's' => $keyword,
         'post_type' => 'post',
-        'post_status' => 'publish'
+        'post_status' => 'publish',
+        'posts_per_page' => 5, // Giới hạn số bài viết hiển thị là 5
+        'orderby' => 'relevance',
     );
 
     $query = new WP_Query($args);
@@ -393,20 +398,18 @@ function search_posts_callback()
             $title = get_the_title();
 
             // Hạn chế tiêu đề chỉ hiển thị 30 ký tự và thêm "..." nếu cần
-            $shortened_title = strlen($title) > 30 ? substr($title, 0, 30) . '...' : $title;
+            $shortened_title = strlen($title) > 30 ? substr($title, 0, 90) . '...' : $title;
             echo '
-            <ul class="top-menu">
-                <li class="" style="">
+            <ul class="">
+                <li class="" style="background-color:#a4bcd18f;width:400px">
                     <a href="' . get_permalink() . '">' . $shortened_title . '</a><br> 
                 </li>
             </ul>
             ';
         }
-        
     } else {
         echo 'Không tìm thấy kết quả.';
     }
 
     wp_die();
 }
-

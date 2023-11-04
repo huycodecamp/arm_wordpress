@@ -14,11 +14,16 @@
     ?>
     <?php
     if ($current_category) {
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+        if (is_page() && !$paged) {
+            $paged = get_query_var('page');
+        }
+        $paged = max(1, $paged);
+
         // Lấy danh sách bài viết của danh mục hiện tại
         $args = array(
             'category__in' => array($current_category->term_id),
-            'posts_per_page' => 2,
+            'posts_per_page' => 1,
             'paged' => $paged // Hiển thị tất cả bài viết trong danh mục
         );
 
@@ -81,12 +86,31 @@
                                     </div>
                                 </div>
                             </article>
+
                         </div>
+
                     <?php
                     endwhile;
                     wp_reset_postdata(); // Đặt lại trạng thái của bài viết
                     ?>
                 </div>
+
+                <div class="pagination">
+                    <?php
+                    
+                    $big = 999999999; // need an unlikely integer
+                    echo paginate_links(array(
+                        'base'    => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                        'format'  => '?paged=%#%',
+                        'current' => $paged,
+                        'total'   => $query->max_num_pages
+                        // You can add the rest of your paginate_links arguments here
+                    ));
+            
+                    ?>
+                </div>
+
+
         <?php
         else :
             echo 'Không có bài viết trong danh mục này.';
@@ -95,34 +119,11 @@
         ?>
 
 
-
-
-
 </div>
-
-<nav class="vsc-pagination">
-    <ul class="pagination justify-content-center">
-        <li class="page-item " style="pointer-events: none;"><a class="page-link" href="javascript:void(0);" aria-label="Previous"><span aria-hidden="true"></span><span class="icon-chevron-left"></span><span class="sr-only">Previous</span></a></li>
-        <li class='page-item active'><span aria-current="page" class="page-link current">1</span></li>
-        <li class='page-item'><a class="page-link" href="https://vinschool.edu.vn/news_event/page/2/?school_level=mam-non&amp;news_type=tin-tuc">2</a></li>
-
-        <li class='page-item'><a class="next page-link" href="https://vinschool.edu.vn/news_event/page/2/?school_level=mam-non&amp;news_type=tin-tuc"> <span class="icon-chevron-right"></span></a></a></li>
-    </ul>
-</nav>
-
 </section>
-
 <!--hr.news-hr-->
 <div class="block-heading d-none">
     <h2 class="the-title font-weight-bold text-uppercase mb-0">Sự kiện</h2>
 </div>
-
-
-
 </div>
-
-
-
-
-
 <?php get_footer() ?>

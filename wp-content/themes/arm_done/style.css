@@ -365,8 +365,8 @@ max-height: 200px;
     /* height: 100%; */
 }
 .avt{
-    max-height: 300px;
-    height: 300px;
+    max-height: 210px;
+    height: 210px;
 }
 
 .bg-white{
@@ -374,12 +374,12 @@ max-height: 200px;
 }
 
 .description{
-    height: 130px;
+    height: 80px;
 }
 
 
 .description-two{
-    height: 150px;
+    height: 125px;
 }
 
 .conveyor_ticker .container:before {
@@ -510,4 +510,61 @@ max-height: 200px;
 .slick-dots li:before {
     content: unset !important;
     display: none;
+}
+
+.custom-index{
+    width: 100%; 
+    max-width:100%;
+}
+.can-giua{
+    width: 70%; 
+    margin: 0 auto;
+}
+
+.content{
+    height: 320px;
+}
+
+.vincers-slider .slick-dots{
+    margin: 15px;
+}
+
+.item-card{
+    margin-top: 30px;
+}
+
+/* Phân trang WordPress */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+    padding: 0;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.pagination .current {
+    background-color: #333;
+    color: #fff;
 }
