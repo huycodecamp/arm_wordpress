@@ -20,7 +20,7 @@
         <div class="footer">
             <div class="footer-small">
                 <div class="row footer-dt">
-                    <div class="col-6">
+                    <div class="col-6" style="text-align:center">
                         <div>
                             <strong> TRƯỜNG THPT CHUYÊN HÀ NỘI - ARMSTERDAM</strong>
                         </div>

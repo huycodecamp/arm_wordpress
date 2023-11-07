@@ -276,12 +276,8 @@ function custom_category_posts_shortcode_3($atts)
 						</div>
 						<div class="col-md-6 col-xl-7 vincer-summary wow fadeInDown">
 							<div class="the-title hero-title text-white h2">' . $post->post_title . '</div>
-							<div class="summary-block">' . custom_excerpt($full_content, 200) . '</div>
-							<ul class="border-list">
-								<li>Đoạt 9 học bổng tại các trường Đại học danh giá về Nghệ thuật và Thiết kế tại Hoa Kỳ
-								</li>
-								<li>IELTS 8.0, SAT 1460, 5/5 AP 2-D Art & Design</li>
-							</ul>
+							<div class="summary-block">' . custom_excerpt($full_content, 1000) . '</div>
+							
 							<p><a class="read-more text-white"
 									href="' . get_permalink($post->ID) . '">XEM
 									TIẾP &gt;</a></p>
@@ -401,7 +397,7 @@ function search_posts_callback()
             $shortened_title = strlen($title) > 30 ? substr($title, 0, 90) . '...' : $title;
             echo '
             <ul class="">
-                <li class="" style="background-color:#a4bcd18f;width:400px">
+                <li class="" style="background-color:#2628298f ;width:320px; border-radius: 5px 5px 0px 0px">
                     <a href="' . get_permalink() . '">' . $shortened_title . '</a><br> 
                 </li>
             </ul>

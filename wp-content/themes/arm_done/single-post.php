@@ -26,14 +26,21 @@ if (have_posts()) :
                         <nav class="vsc-breadcrumb vsc-breadcrumb-border" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Trang chủ</a></li>
-                                <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Tên Chuyên Mục Ở đây</a></li>
+
+                                <?php if ($term) : ?>
+                                    <li class="breadcrumb-item"><a href="<?php echo get_category_link($term->term_id); ?>"><?php echo $term->name; ?></a></li>
+                                <?php endif; ?>
+
                                 <li class="breadcrumb-item active"><?php the_title(); ?></li>
                             </ol>
                         </nav>
 
-                        <!-- Phần này để truyền nội dung của bài viết vào -->
-                        <?php the_content(); ?>
 
+                        <div class="text-form">
+                            <!-- Phần này để truyền nội dung của bài viết vào -->
+                            <?php the_content(); ?>
+
+                        </div>
 
 
 
@@ -95,7 +102,7 @@ endif;
                                 <div class="h5 card-title "><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                                 <div class="card-bottom d-flex align-items-center justify-content-between">
                                     <p class="card-date"><?php echo get_the_date('d/m/Y'); ?></p>
-                                    <a class="read-more" href="<?php the_permalink(); ?>">Xem tiếp<span class="icon-next-1 ml-2"></span></a>
+                                    <a class="read-more" href="<?php the_permalink(); ?>">Xem tiếp<i class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </article>

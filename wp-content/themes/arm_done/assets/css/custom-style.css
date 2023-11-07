@@ -171,7 +171,7 @@
     }
 
     .first {
-        padding-top: 48px;
+        padding-top: 10px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -199,12 +199,12 @@
 
     .content {
         padding: 0 20px;
+        height: 260px;
     }
 
     .new {
         color: #ffa33e;
         font-size: 14px;
-        padding-bottom: 5px;
     }
 
     .continue {
@@ -229,21 +229,19 @@
     .date {
         color: black;
         font-size: 12px;
-        padding-bottom: 13px;
+        padding-bottom: 10px;
     }
 
     .description {
         color: #0068af;
         font-size: 20px;
-        padding-bottom: 14px;
-        
     }
 
     .description-two {
         color: black;
         font-size: 14px;
         padding-bottom: 75px;
-        
+        height: 100px;
     }
 
     .wrapper-card {
@@ -255,7 +253,7 @@
 
     .avt {
         width: 100%;
-        padding-bottom: 20px;
+        padding-bottom: 5px;
     }
 
     .btn {
@@ -291,9 +289,8 @@
 
     .title {
         font-size: 25px;
-        color: white;
+        color: black;
         padding: 5px 32px;
-        background-color: #0068af;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
     }
