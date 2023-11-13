@@ -88,12 +88,12 @@ function custom_category_posts_shortcode_1($atts)
                                 <img class="avt" src="' . $feature_image . '" />
                                 </a>
                                     <div class="content px-3">
-                                        <div class="new">' . $term->name . '</div>
+                                        <a href = "' . $category_string . '"><div class="new">' . $term->name . '</div></a>
                                         <a href="' . get_permalink($post->ID) . '"> 
                                         <div class="description">
-                                        ' . substr($post->post_title, 0, 60) . (strlen($post->post_title) > 60 ? '...' : '') . '
-                                        </div> </a>
+                                        ' . substr($post->post_title, 0, 100) . (strlen($post->post_title) > 100 ? '...' : '') . '
                                         <div class="date">' . $post_date . '</div>
+                                        </div> </a>
                                         <div class="description-two">' . custom_excerpt($full_content, 200) . '</div>
                                         <div class="continue">
                                             <a href="' . get_permalink($post->ID) . '">Xem thêm </a>
@@ -176,13 +176,13 @@ function custom_category_posts_shortcode_2($atts)
                         </a>
 
                         <div class="content px-3">
-                            <div class="new">' . $term->name . '</div>
+                            <a href = "' . $category_string . '"><div class="new">' . $term->name . '</div></a>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description">
-                            ' . substr($post->post_title, 0, 60) . (strlen($post->post_title) > 60 ? '...' : '') . '
+                            ' . substr($post->post_title, 0, 100) . (strlen($post->post_title) > 100 ? '...' : '') . '
+                            <div class="date">' . $post_date . '</div>
                             </div> </a>
 
-                            <div class="date">' . $post_date . '</div>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description-two">
                                 ' . custom_excerpt($full_content, 200) . '
@@ -226,7 +226,7 @@ function custom_category_posts_shortcode_3($atts)
     // Mặc định các tham số
     $atts = shortcode_atts(array(
         'category' => '', // Tên của danh mục
-        'posts_per_page' => 3, // Số lượng bài viết muốn hiển thị (-1 để hiển thị tất cả)
+        'posts_per_page' => 6, // Số lượng bài viết muốn hiển thị (-1 để hiển thị tất cả)
         'css_class' => 'block2 first'
     ), $atts);
 
@@ -242,9 +242,9 @@ function custom_category_posts_shortcode_3($atts)
     // Tạo biến để lưu nội dung của shortcode
     $output = '<section class="section block-vincers block2" >
     <div class="block-heading border-light">
-        <div class="row">
+        <div class="row" style="padding-top: 8px">
             <div class="col-lg-7">
-                <h2 class="the-title text-white border-light wow fadeInLeft">' . $term->name . '</h2>
+                <h2 class="the-title text-white border-light wow fadeInLeft" style="font-family:sans-serif;">' . $term->name . '</h2>
             </div>
             <div class="col-lg-5 text-right"><a class="btn btn-primary text-white wow fadeInRight"
                     href="' . $category_string . '">XEM TẤT CẢ</a></div>
@@ -268,10 +268,10 @@ function custom_category_posts_shortcode_3($atts)
 						<div class="col-md-5"><a
 								href="' . get_permalink($post->ID) . '">
                                     <img
-									width="1363" height="2048" class="img-fluid"
+									 class="img-fluid"
 									src="' . $feature_image . '"
 									data-lazy-src="' . $feature_image . '"><noscript><img
-										width="1363" height="2048" class="img-fluid"
+										 class="img-fluid"
 										src="' . $feature_image . '"></noscript></a>
 						</div>
 						<div class="col-md-6 col-xl-7 vincer-summary wow fadeInDown">
