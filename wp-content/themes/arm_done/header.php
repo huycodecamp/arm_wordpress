@@ -569,6 +569,8 @@
 		</style>
 	</noscript>
 
+	
+
 </head>
 
 <body style="background-color: white">
@@ -784,8 +786,8 @@
 								<li><a href="javascript:void(0)"><i class="icon-youtube"></i></a></li>
 							</ul>
 							<ul class="nav-lang">
-								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="index.html">VN</a></li>
-								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="https://vinschool.edu.vn/en/home-page/">EN</a></li>
+								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
+								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="<?php echo home_url(); ?>">EN</a></li>
 							</ul>
 						</div>
 						<button class="btn-show-nav" type="button"></button>

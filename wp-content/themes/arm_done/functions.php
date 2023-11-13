@@ -61,10 +61,10 @@ function custom_category_posts_shortcode_1($atts)
     <div class="block2 first"> 
     <div class="header-block2">
         <div class="title">
-            <div>' . $term->name . '</div>
+            <div class="wall">' . $term->name . '</div>
         </div>
         <a href="' . $category_string . '">
-            <button class="btn">Xem tất cả</button>
+            <button class="btn btn-secondary no_cursor">Xem tất cả</button>
         </a>
     
     </div>
@@ -150,15 +150,15 @@ function custom_category_posts_shortcode_2($atts)
     <div class="block2 khac-mau">
         <div class="header-block2">
             <div class="title">
-                <div>' . $term->name . '</div>
+                <div class="wall">' . $term->name . '</div>
             </div>
             <a href="' . $category_string . '">
-                <button class="btn">Xem tất cả</button>
+                <button class="btn btn-secondary no_cursor">Xem tất cả</button>
             </a>
             
         </div>
-        <div class="wrapper-card">
-            <div class="row mx-0">
+    <div class="wrapper-card">
+    <div class="row mx-0">
     ';
     if (!empty($category_posts)) {
         foreach ($category_posts as $post) {
@@ -187,10 +187,8 @@ function custom_category_posts_shortcode_2($atts)
                             <div class="description-two">
                                 ' . custom_excerpt($full_content, 200) . '
                             </div>
-                            
                             </a>
 
-                            
                             <div class="continue">
                                 <a href="' . get_permalink($post->ID) . '"> Xem thêm </a>
                                 <i class="fa-solid fa-arrow-right"></i>
@@ -267,7 +265,7 @@ function custom_category_posts_shortcode_3($atts)
 					<div class="row">
 						<div class="col-md-5"><a
 								href="' . get_permalink($post->ID) . '">
-                                    <img
+                                    <img width="100%"
 									 class="img-fluid"
 									src="' . $feature_image . '"
 									data-lazy-src="' . $feature_image . '"><noscript><img

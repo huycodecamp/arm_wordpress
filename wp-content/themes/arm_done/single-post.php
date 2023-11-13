@@ -102,7 +102,7 @@ endif;
                                 <div class="h5 card-title "><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                                 <div class="card-bottom d-flex align-items-center justify-content-between">
                                     <p class="card-date"><?php echo get_the_date('d/m/Y'); ?></p>
-                                    <a class="read-more" href="<?php the_permalink(); ?>">Xem tiếp<i class="fa-solid fa-arrow-right"></i></a>
+                                    <a class="read-more" href="<?php the_permalink(); ?>">Xem tiếp <i class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </article>
