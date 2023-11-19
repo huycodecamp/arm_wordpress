@@ -80,18 +80,20 @@ function custom_category_posts_shortcode_1($atts)
 
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
             $full_content = get_the_content();
-
+            $image_source = $feature_image ? $feature_image : get_template_directory_uri() . '/assets/img/default-image.jpg';
             $output .= '
                             <div class="item-card col-lg-4 col-md-12 px-3">
                                 <div class="bg-white">
                                 <a href="' . get_permalink($post->ID) . '">
-                                <img class="avt" src="' . $feature_image . '" />
+                                
+                                <img style="object-fit: cover;" class="avt" src="' . $image_source . '" />
+
                                 </a>
                                     <div class="content px-3">
                                         <a href = "' . $category_string . '"><div class="new">' . $term->name . '</div></a>
                                         <a href="' . get_permalink($post->ID) . '"> 
                                         <div class="description">
-                                        ' . substr($post->post_title, 0, 100) . (strlen($post->post_title) > 100 ? '...' : '') . '
+                                        ' . substr($post->post_title, 0, 100) . (strlen($post->post_title) > 100) . '
                                         <div class="date">' . $post_date . '</div>
                                         </div> </a>
                                         <div class="description-two">' . custom_excerpt($full_content, 200) . '</div>
@@ -101,7 +103,8 @@ function custom_category_posts_shortcode_1($atts)
                                         </div>
                                     </div>
                                 </div>
-                            </div>';
+                            </div>
+                            ';
         }
         wp_reset_postdata(); // Đặt lại dữ liệu bài viết
     } else {
@@ -167,19 +170,19 @@ function custom_category_posts_shortcode_2($atts)
 
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
             $full_content = get_the_content();
-
+            $image_source = $feature_image ? $feature_image : get_template_directory_uri() . '/assets/img/default-image.jpg';
             $output .= '
             <div class="item-card col-lg-4 col-md-12 px-3">
                     <div class="bg-white">
                         <a href="' . get_permalink($post->ID) . '">
-                        <img class="avt" src="' . $feature_image . '" />
+                        <img style="object-fit: cover;" class="avt" src="' . $image_source . '" />
                         </a>
 
                         <div class="content px-3">
                             <a href = "' . $category_string . '"><div class="new">' . $term->name . '</div></a>
                             <a href="' . get_permalink($post->ID) . '"> 
                             <div class="description">
-                            ' . substr($post->post_title, 0, 100) . (strlen($post->post_title) > 100 ? '...' : '') . '
+                            ' . substr($post->post_title, 0, 100) . (strlen($post->post_title) > 100) . '
                             <div class="date">' . $post_date . '</div>
                             </div> </a>
 
@@ -237,6 +240,8 @@ function custom_category_posts_shortcode_3($atts)
     $category = get_term_by('slug', $atts['category'], 'category');
     $category_string =  get_site_url() . '?cat=' . $category->term_id;
     $term = get_term($category->term_id, 'category');
+
+
     // Tạo biến để lưu nội dung của shortcode
     $output = '<section class="section block-vincers block2" >
     <div class="block-heading border-light">
@@ -257,28 +262,28 @@ function custom_category_posts_shortcode_3($atts)
             $feature_image = get_featured_image_guid($post->ID);
             $post_date = get_the_time('d/m/Y', $post); // Lấy thời gian của bài viết
             $full_content = get_the_content();
-
+            $image_source = $feature_image ? $feature_image : get_template_directory_uri() . '/assets/img/default-image.jpg';
 
             $output .= '
             
-            <div class="slider-item">
+            <div class="slider-item slider_top">
 					<div class="row">
 						<div class="col-md-5"><a
 								href="' . get_permalink($post->ID) . '">
                                     <img width="100%"
 									 class="img-fluid"
-									src="' . $feature_image . '"
-									data-lazy-src="' . $feature_image . '"><noscript><img
+									src="' . $image_source . '"
+									data-lazy-src="' . $image_source . '"><noscript><img
 										 class="img-fluid"
-										src="' . $feature_image . '"></noscript></a>
+										src="' . $image_source . '"></noscript></a>
 						</div>
 						<div class="col-md-6 col-xl-7 vincer-summary wow fadeInDown">
-							<div class="the-title hero-title text-white h2">' . $post->post_title . '</div>
-							<div class="summary-block">' . custom_excerpt($full_content, 1000) . '</div>
+							<div class="the-title hero-title text-white h2" style="font-family:sans-serif">' . $post->post_title . '</div>
+							<div class="summary-block" style="font-family:sans-serif">' . custom_excerpt($full_content, 1000) . '</div>
 							
 							<p><a class="read-more text-white"
-									href="' . get_permalink($post->ID) . '">XEM
-									TIẾP &gt;</a></p>
+									href="' . get_permalink($post->ID) . '" style="font-family:sans-serif;">XEM
+									TIẾP <i class="fa-solid fa-arrow-right"></i></a></p>
 						</div>
 					</div>
 				</div>

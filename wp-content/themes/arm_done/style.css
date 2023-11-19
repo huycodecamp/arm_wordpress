@@ -603,6 +603,7 @@ max-height: 200px;
 
 .wall{
     margin-left: -17px;
+    margin-top: -9px;
 }
 
 .righ-light{
@@ -611,7 +612,7 @@ max-height: 200px;
 
 @media (min-width: 1200px){
     .block-vincers {
-        margin-bottom: -30px !important;
+        margin-bottom: 58px !important;
         width: 996px;
     }
 }
@@ -620,4 +621,44 @@ max-height: 200px;
     .footer-logos {
         height: 75px !important;
     }
+}
+
+.category_post ul li a:hover{
+    text-decoration: none !important;
+}
+
+.img-fluid {
+    height: 424px !important;
+    object-fit: cover !important;
+}
+
+.lang_under_line:hover{
+    text-decoration: none !important;
+}
+
+.read-more:hover{
+    text-decoration: none !important;
+}
+
+.vsc-horizontal-card .card-title {
+    font-weight: 400 !important;
+    line-height: 24px;
+}
+
+.card-date{
+    font-size: 12px !important;
+    margin-top: -7px !important;
+}
+
+.card-text{
+    margin-top: -7px !important;
+}
+
+.list_category_post{
+    height: 26px;
+    margin-top: -3px;
+}
+
+.no-gutters{
+    box-shadow: 5px 5px 10px #888888;
 }

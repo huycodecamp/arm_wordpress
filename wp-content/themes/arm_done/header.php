@@ -15,7 +15,7 @@
 	<meta name='robots' content='max-image-preview:large' />
 
 	<!-- This site is optimized with the Yoast SEO Premium plugin v15.0 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Hn - Armschool</title>
+	<title>Hà Nội - Amsterdam | Trường THPT chuyên Hà Nội - Amsterdam</title>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/homepage.css" />
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/custom-style.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -605,8 +605,7 @@
 
 							echo $output;
 						}
-
-
+						
 						?>
 
 					</ul>
@@ -619,14 +618,14 @@
 					<div class="top-bar-content">
 						<div class="top-meta">
 							<ul class="nav-lang">
-								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
-								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="javascript:void(0)">EN</a></li>
+								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a class="lang_under_line" lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
+								<li class="lang-item lang-item-12 lang-item-en"><a class="lang_under_line" lang="en-GB" hreflang="en-GB" href="javascript:void(0)">EN</a></li>
 							</ul>
 							<ul class="socials">
-								<li><a href="javascript:void(0)"><i class="fa-brands fa-facebook-f"></i></a>
+								<li><a href="https://www.facebook.com/THPTChuyenHanoiAmsterdam"><i class="fa-brands fa-facebook-f"></i></a>
 								</li>
-								<li><a href="mailto:http://info@vinschool.edu.vn"><i class="fa-regular fa-envelope"></i></a></li>
-								<li><a href="javascript:void(0)"><i class="fa-brands fa-youtube"></i></a></li>
+								<li><a href="mailto:c23hanoi-ams@hanoiedu.vn"><i class="fa-regular fa-envelope"></i></a></li>
+								<li><a href="https://youtu.be/xL1GuGW4tQo?si=7cbHIiMYm9CY-s1G"><i class="fa-brands fa-youtube"></i></a></li>
 							</ul>
 						</div>
 						<nav class="menu-top-menu-vn-container">
@@ -782,12 +781,12 @@
 							<ul class="socials">
 								<li><a href="javascript:void(0)"><i class="icon-facebook"></i></a>
 								</li>
-								<li><a href="mailto:http://info@vinschool.edu.vn"><i class="icon-mail"></i></a></li>
-								<li><a href="javascript:void(0)"><i class="icon-youtube"></i></a></li>
+								<li><a href="javascript:void(0)"><i class="icon-mail"></i></a></li>
+								<li><a href="https://youtu.be/xL1GuGW4tQo?si=wql6vKN-XAhV8py9"><i class="icon-youtube"></i></a></li>
 							</ul>
 							<ul class="nav-lang">
-								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
-								<li class="lang-item lang-item-12 lang-item-en"><a lang="en-GB" hreflang="en-GB" href="<?php echo home_url(); ?>">EN</a></li>
+								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a class="lang_under_line" lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
+								<li class="lang-item lang-item-12 lang-item-en"><a class="lang_under_line" lang="en-GB" hreflang="en-GB" href="<?php echo home_url(); ?>">EN</a></li>
 							</ul>
 						</div>
 						<button class="btn-show-nav" type="button"></button>

@@ -172,11 +172,12 @@
     .block2 {
         max-width: 1026px;
         margin: 0 auto;
-        padding: 30px 0 0 0;
+        padding: 12px 0 0 0;
     }
 
     .first {
         padding-top: 10px;
+        margin-bottom: 60px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -217,6 +218,8 @@
         align-items: center;
         gap: 4px;
         font-size: 12px;
+        position: absolute;
+        bottom: 11px;
     }
 
     .item-card {
@@ -232,14 +235,15 @@
     .date {
         color: black;
         font-size: 12px;
-        padding-bottom: 5px;
         padding-top: 4px;
+        font-style: italic;
     }
 
     .description {
         color: #0068af;
         font-size: 20px;
-        height: 109px;
+        line-height: 24px;
+        padding-bottom: 9px;
     }
 
     .description-two {
@@ -247,6 +251,7 @@
         font-size: 14px;
         padding-bottom: 75px;
         height: 100px;
+        margin-top: -6px;
     }
 
     .wrapper-card {
@@ -293,7 +298,7 @@
     }
 
     .title {
-        font-size: 25px;
+        font-size: 30px;
         color: black;
         padding: 5px 16px;
         border-top-left-radius: 8px;
@@ -396,4 +401,16 @@
     .result-search:hover {
         color: #ff0000; /* Thay đổi màu khi hover */
         /* Hoặc bạn có thể sử dụng thuộc tính khác như background-color, border, etc. */
+    }
+
+    .slick-prev:before {
+        content: '←' !important;
+    }
+
+    .slick-next:before {
+        content: '→' !important;
+    }
+
+    .continue a {
+        font-weight: 700;
     }

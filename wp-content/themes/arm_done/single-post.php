@@ -12,8 +12,8 @@ $term = null;
 if (!empty($categories)) {
     $firstCategories = $categories[0];
     $term = get_term($firstCategories->term_id, 'category');
-}
-$firstCategories
+}   
+
 ?>
 <?php
 if (have_posts()) :
@@ -28,7 +28,12 @@ if (have_posts()) :
                                 <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Trang chủ</a></li>
 
                                 <?php if ($term) : ?>
-                                    <li class="breadcrumb-item"><a href="<?php echo get_category_link($term->term_id); ?>"><?php echo $term->name; ?></a></li>
+                                    <?php
+                                    // Lặp qua tất cả các chuyên mục và hiển thị tên của chúng
+                                    foreach ($categories as $category) {
+                                        echo '<li class="breadcrumb-item"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
+                                    }
+                                    ?>
                                 <?php endif; ?>
 
                                 <li class="breadcrumb-item active"><?php the_title(); ?></li>
