@@ -662,3 +662,21 @@ max-height: 200px;
 .no-gutters{
     box-shadow: 5px 5px 10px #888888;
 }
+
+.main-nav-mb{
+    top: 112px !important;
+}
+
+.backdrop-mb{
+    top: 112px !important;
+}
+
+.header-mb .no_move{
+    height: 70px;
+    background-color: transparent;
+    transition: background-color 0.5s ease !important;
+}
+
+.transparent {
+    background-color:rgb(0 123 255 / 75%) !important;
+  }

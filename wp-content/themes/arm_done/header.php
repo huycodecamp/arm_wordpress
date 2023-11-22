@@ -569,7 +569,7 @@
 		</style>
 	</noscript>
 
-	
+
 
 </head>
 
@@ -605,7 +605,7 @@
 
 							echo $output;
 						}
-						
+
 						?>
 
 					</ul>
@@ -676,7 +676,7 @@
 
 							</ul>
 						</nav>
-						<a class="btn btn-secondary btn-top btn-register__online" href="javascript:void(0)" style="background-color:#ffbd49; border:none; display: flex;
+						<a class="btn btn-secondary btn-top btn-register__online" href="http://localhost/arm/arm_wordpress/?cat=1427" style="background-color:#ffbd49; border:none; display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 15px;">TUYỂN SINH</a>
@@ -773,29 +773,30 @@
 			</div>
 		</div>
 		<div class="header-mb">
-			<div class="top-bar" style="background-color:rgb(0 123 255 / 75%)">
+			<div class="top-bar no_move" id="transparentDiv">
 				<div class="container">
 					<div class="top-bar-content">
-						<p class="logo"><a href="<?php echo home_url(); ?>"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="#" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></p>
+						<p class="logo logo-sm"><a href="<?php echo home_url(); ?>"><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="#" data-lazy-src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png"><noscript><img width="228" height="182" src="<?php echo get_template_directory_uri(); ?>/assets/images/demo/imgs/logo.png" alt="Armschool"></noscript></a></p>
 						<div class="top-meta">
 							<ul class="socials">
-								<li><a href="javascript:void(0)"><i class="icon-facebook"></i></a>
+								<li><a href="https://www.facebook.com/THPTChuyenHanoiAmsterdam"><i class="fa-brands fa-facebook-f"></i></a>
 								</li>
-								<li><a href="javascript:void(0)"><i class="icon-mail"></i></a></li>
-								<li><a href="https://youtu.be/xL1GuGW4tQo?si=wql6vKN-XAhV8py9"><i class="icon-youtube"></i></a></li>
+								<li><a href="mailto:c23hanoi-ams@hanoiedu.vn"><i class="fa-regular fa-envelope"></i></a></li>
+								<li><a href="https://youtu.be/xL1GuGW4tQo?si=7cbHIiMYm9CY-s1G"><i class="fa-brands fa-youtube"></i></a></li>
 							</ul>
 							<ul class="nav-lang">
 								<li class="lang-item lang-item-9 lang-item-vi current-lang lang-item-first"><a class="lang_under_line" lang="vi" hreflang="vi" href="<?php echo home_url(); ?>">VN</a></li>
 								<li class="lang-item lang-item-12 lang-item-en"><a class="lang_under_line" lang="en-GB" hreflang="en-GB" href="<?php echo home_url(); ?>">EN</a></li>
 							</ul>
 						</div>
-						<button class="btn-show-nav" type="button"></button>
+						<button class="btn-show-nav" type="button" id="toggleBtn"></button>
 					</div>
 				</div>
 			</div>
+
 			<div class="main-nav-mb">
 				<div class="d-flex">
-					<a class="btn btn-secondary btn-top" href="https://vinschool.edu.vn/vinschool-one/">ĐĂNG KÝ TUYỂN
+					<a class="btn btn-secondary btn-top" href="http://localhost/arm/arm_wordpress/?cat=1427">ĐĂNG KÝ TUYỂN
 						SINH TRỰC TUYẾN Amsterdam</a>
 
 				</div>
@@ -814,11 +815,10 @@
 									});
 
 									// Chỉ lấy 4 phần tử đầu tiên của mục menu cấp 1
-									$menu_level_1 = array_slice($menu_level_1, 0, 4);
 
 									foreach ($menu_level_1 as $item) {
 										echo '<li id="menu-item-' . $item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-                     							<a href="' . get_permalink($post->ID) . '">' . $item->title . '</a>';
+                     							<a href="' . $item->url . '">' . $item->title . '</a>';
 
 										// Lấy ra mục menu cấp 2
 										$menu_level_2 = array_filter($menu_items, function ($sub_item) use ($item) {
@@ -829,7 +829,7 @@
 											echo '<ul class="sub-menu">';
 											foreach ($menu_level_2 as $sub_item) {
 												echo '<li id="menu-item-' . $sub_item->ID . '" class="menu-item menu-item-type-post_type menu-item-object-page">
-														<a href="' . get_permalink($post->ID) . '">' . $sub_item->title . '</a>
+														<a href="' . $item->url . '">' . $sub_item->title . '</a>
 														</li>';
 											}
 											echo '</ul>';
@@ -840,12 +840,6 @@
 							}
 						}
 						?>
-
-
-
-
-
-
 
 					</ul>
 				</nav>
@@ -859,12 +853,40 @@
 					</div>
 				</div>
 			</div>
-			<a class="backdrop-mb" href="#"></a>
+			<a class="backdrop-mb" id="remove_blue" href="#"></a>
 		</div>
 	</header>
 	<!-- <h1 class="d-none">VINSCHOOL</h1> -->
 
+	<script>
+		// Lấy tham chiếu đến div
+		var transparentDiv = document.getElementById('transparentDiv');
+		var toggleBtn = document.getElementById('toggleBtn');
+		var remove_blue = document.getElementById('remove_blue');
 
+		// Thêm sự kiện lắng nghe khi trang được cuộn
+		window.addEventListener('scroll', function() {
+			// Nếu scrollTop lớn hơn 0, có nghĩa là trang đã được cuộn xuống
+			if (window.scrollY > 0) {
+				transparentDiv.classList.add('transparent');
+			} else {
+				transparentDiv.classList.remove('transparent');
+			}
+		});
+
+		toggleBtn.addEventListener('click', function() {
+			transparentDiv.classList.add('transparent');
+		});
+
+		remove_blue.addEventListener('click', function() {
+			if (window.scrollY > 0) {
+				transparentDiv.classList.add('transparent');
+			} else {
+				transparentDiv.classList.remove('transparent');
+			}
+		});
+
+	</script>
 
 	<!-- Banner -->
 	<div class="carousel home-carousel" id="banner" data-slick='{"arrows":false,"dots":true,"slidesToShow":1,"slidesToScroll":1,"fade":true,"autoplay":true,"autoplaySpeed":15000,"infinite":true,"pauseOnHover":false,"cssEase":"linear","speed":500,"responsive":[{"breakpoint":768,"settings":{"arrows":false}}]}'>
